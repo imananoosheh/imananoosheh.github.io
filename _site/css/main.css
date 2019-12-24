@@ -1,0 +1,195 @@
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 100%; }
+
+*,
+::after,
+::before {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+  font-family: "Lato", sans-serif !important; }
+
+body {
+  color: #111111 !important; }
+
+#title-header {
+  color: transparent;
+  overflow: hidden;
+  z-index: -10000;
+  position: absolute; }
+
+.font-color-bright {
+  color: white !important; }
+
+.font-color-dark {
+  color: #111111 !important; }
+
+#body-wrapper {
+  border: solid white;
+  border-width: 80px 30px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  color: #111111 !important; }
+  #body-wrapper #body-wrapper-child-head {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 100%;
+    text-align: center; }
+  #body-wrapper #body-wrapper-child-bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 80px;
+    width: 100%;
+    text-align: center; }
+
+#sub-body-background {
+  position: fixed;
+  right: 5%;
+  top: 5%;
+  width: 90%;
+  height: 90%;
+  background-color: rgba(255, 255, 255, 0.7) !important; }
+
+#sub-body {
+  padding: 50px 75px; }
+
+/********************CANVAS STYLE|START***********************/
+canvas {
+  position: fixed; }
+
+/********************CANVAS STYLE|END***********************/
+/********************HEADER STYLE|START***********************/
+header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 6%;
+  border: 3px solid #111111 !important;
+  border-radius: 0px !important; }
+
+#navigation-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 5px 10px;
+  height: auto; }
+
+.nav-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  /*for justifying the content in center*/
+  -webkit-box-pack: center !important;
+  -ms-flex-pack: center !important;
+  justify-content: center !important;
+  margin: auto; }
+
+.nav-link-main {
+  display: block;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: inherit; }
+
+.nav-item-main {
+  -ms-flex-preferred-size: 0;
+  flex-basis: 0;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  text-align: center; }
+  .nav-item-main .nav-link-main {
+    border: 1px solid transparent;
+    margin: 5px; }
+  .nav-item-main .nav-link-main:hover {
+    border: 1px solid #3f3f3f !important;
+    border-radius: 0px;
+    color: #3f3f3f !important;
+    text-decoration: none; }
+
+/********************HEADER STYLE|END***********************/
+/********************MAIN BODY STYLE|START***********************/
+#main-body {
+  position: relative;
+  border: 3px solid #111111 !important;
+  border-radius: 0px !important;
+  height: 0px;
+  width: 100%;
+  margin: 10px 0px; }
+
+#main-body-child {
+  overflow: auto;
+  height: 100%;
+  text-align: center; }
+
+/********************MAIN BODY STYLE|END***********************/
+/********************FOOTER STYLE|START***********************/
+#contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  height: 100px;
+  margin: auto; }
+  #contact div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: auto;
+    padding: 0px 5px;
+    color: inherit; }
+
+footer {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 6%;
+  border: 3px solid #111111 !important;
+  border-radius: 0px !important; }
+
+/********************FOOTER STYLE|END***********************/
+/********************BREAKPOINTS SECTION|START***********************/
+@media (max-width: 575.98px) {
+  #body-wrapper {
+    border-width: 40px 30px; }
+
+  #body-wrapper {
+    font-size: .75rem; }
+    #body-wrapper #body-wrapper-child-head, #body-wrapper #body-wrapper-child-bottom {
+      height: 40px; }
+
+  #sub-body {
+    padding: 40px 30px;
+    border: 3px solid #111111 !important;
+    border-radius: 0px !important; } }
+@media (min-width: 576px) and (max-width: 767.98px) {
+  #body-wrapper {
+    border-width: 40px 30px; }
+
+  #body-wrapper {
+    font-size: .75rem; }
+    #body-wrapper #body-wrapper-child-head, #body-wrapper #body-wrapper-child-bottom {
+      height: 40px; }
+
+  #sub-body {
+    padding: 40px 30px; } }
+/********************BREAKPOINTS SECTION|END***********************/
+
+/*# sourceMappingURL=main.css.map */
