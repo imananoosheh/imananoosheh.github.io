@@ -11,7 +11,7 @@ html {
   font-family: "Lato", sans-serif !important; }
 
 body {
-  color: #111111 !important; }
+  color: #dcdcdc !important; }
 
 #title-header {
   color: transparent;
@@ -20,10 +20,10 @@ body {
   position: absolute; }
 
 .font-color-bright {
-  color: white !important; }
+  color: #202020 !important; }
 
 .font-color-dark {
-  color: #111111 !important; }
+  color: #dcdcdc !important; }
 
 #body-wrapper {
   border: solid white;
@@ -33,7 +33,7 @@ body {
   right: 0;
   width: 100%;
   height: 100%;
-  color: #111111 !important; }
+  color: #dcdcdc !important; }
   #body-wrapper #body-wrapper-child-head {
     position: fixed;
     top: 0;
@@ -70,7 +70,7 @@ header {
   position: -webkit-sticky;
   position: sticky;
   top: 6%;
-  border: 3px solid #111111 !important;
+  border: 3px solid #dcdcdc !important;
   border-radius: 0px !important; }
 
 #navigation-main {
@@ -129,7 +129,7 @@ header {
 /********************MAIN BODY STYLE|START***********************/
 #main-body {
   position: relative;
-  border: 3px solid #111111 !important;
+  border: 3px solid #dcdcdc !important;
   border-radius: 0px !important;
   height: 0px;
   width: 100%;
@@ -161,7 +161,7 @@ footer {
   position: -webkit-sticky;
   position: sticky;
   bottom: 6%;
-  border: 3px solid #111111 !important;
+  border: 3px solid #dcdcdc !important;
   border-radius: 0px !important; }
 
 /********************FOOTER STYLE|END***********************/
@@ -177,7 +177,7 @@ footer {
 
   #sub-body {
     padding: 40px 30px;
-    border: 3px solid #111111 !important;
+    border: 3px solid #dcdcdc !important;
     border-radius: 0px !important; } }
 @media (min-width: 576px) and (max-width: 767.98px) {
   #body-wrapper {
