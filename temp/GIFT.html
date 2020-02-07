@@ -8,23 +8,25 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <style>
         #loader {
-            position: absolute;
-            left: 0%;
-            top: 0%;
             z-index: 1;
-            width: 99vh;
-            height: 99vh;
-            margin: -75px 0 0 -75px;
+            width: 100%;
+            height: 100%;
+            /*margin: -75px 0 0 -75px;*/
             background-color: #181818;
           }
         #button{
             position: absolute;
-            left: 45%; 
+            top: 50%;
+            left: 50%;
+            /* bring your own prefixes */
+            transform: translate(-50%, -50%);
         }
         video{
+            /*
             width: 95%;
             position: fixed;
             margin-top: 80px !important;
+            */
         }
         body{
             background-color: #0F4C81 !important;
@@ -45,19 +47,26 @@
         audio {
             display: none;
         }
+        .centeralized{
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            /* bring your own prefixes */
+            transform: translate(-50%, -50%);
+        }
     </style>
     <title>HeartScript TO YOU</title>
 </head>
 
 <body>
-    <div id="loader">
-        <video id="video" autoplay="true" src="unwrapping.mp4"></video autoplay="true">
+    <div id="loader" class="centeralized">
+        <video id="video" src="unwrapping.mp4"></video>
         <button id="button">
             Ready?😁
         </button>
     </div>
     <div id="main" style="display: none;">
-        <audio autoplay="true" controls>
+        <audio id="audio" autoplay="true" controls>
             <source src="SYML.ogg" type="audio/ogg">
             <source src="SYML.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
@@ -68,22 +77,14 @@
     </div>
 
     <script>
-        var myVar;
-        
-        function myFunction() {
-          myVar = setTimeout(showPage, 3000);
-        }
-        
-        $("#button").click(function(){
-            // action goes here!!
-            play();
-            document.getElementById("loader").style.display = "none";
-            document.getElementById("main").style.display = "grid";
-          }); 
-        function showPage() {
-          document.getElementById("loader").style.display = "none";
-          document.getElementById("main").style.display = "grid";
-        }
+        $(document).ready(function(){
+            $("button").click(function(){
+                document.getElementById("loader").style.display = "none";
+                document.getElementById("main").style.display = "grid";
+                var x = document.getElementById("audio");
+                x.play();
+            });
+          });
         </script>
 </body>
 
