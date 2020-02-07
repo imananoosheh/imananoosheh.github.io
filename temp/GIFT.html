@@ -5,23 +5,27 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <style>
         #loader {
             position: absolute;
-            left: 50%;
-            top: 50%;
+            left: 0%;
+            top: 0%;
             z-index: 1;
-            width: 150px;
-            height: 150px;
+            width: 99vh;
+            height: 99vh;
             margin: -75px 0 0 -75px;
-            border: 16px solid #f3f3f3;
-            border-radius: 50%;
-            border-top: 16px solid #0F4C81;
-            width: 120px;
-            height: 120px;
-            -webkit-animation: spin 2s linear infinite;
-            animation: spin 2s linear infinite;
+            background-color: #181818;
           }
+        #button{
+            position: absolute;
+            left: 45%; 
+        }
+        video{
+            width: 95%;
+            position: fixed;
+            margin-top: 80px !important;
+        }
         body{
             background-color: #0F4C81 !important;
         }
@@ -47,15 +51,20 @@
 
 <body>
     <div id="loader">
-
+        <video id="video" autoplay="true" src="unwrapping.mp4"></video autoplay="true">
+        <button id="button">
+            Ready?😁
+        </button>
     </div>
-    <audio autoplay="true" controls>
-        <source src="SYML.ogg" type="audio/ogg">
-        <source src="SYML.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-    <div id="imgbox">
-        <img class="center-fit" src="ValCard.jpeg" alt="Valentine Card">
+    <div id="main" style="display: none;">
+        <audio autoplay="true" controls>
+            <source src="SYML.ogg" type="audio/ogg">
+            <source src="SYML.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <div id="imgbox">
+            <img class="center-fit" src="ValCard.jpeg" alt="Valentine Card">
+        </div>
     </div>
 
     <script>
@@ -65,9 +74,15 @@
           myVar = setTimeout(showPage, 3000);
         }
         
+        $("#button").click(function(){
+            // action goes here!!
+            play();
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("main").style.display = "grid";
+          }); 
         function showPage() {
           document.getElementById("loader").style.display = "none";
-          document.getElementById("imgbox").style.display = "grid";
+          document.getElementById("main").style.display = "grid";
         }
         </script>
 </body>
