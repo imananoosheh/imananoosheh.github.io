@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /**
+        img {position: relative;left: 50%;top: 50%;width: 90%;}
+        **/
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .imgbox {
+            display: grid;
+            height: 100%;
+        }
+        .center-fit {
+            max-width: 100%;
+            max-height: 100vh;
+            margin: auto;
+        }
+        audio {
+            display: none;
+        }
+    </style>
+    <title>HeartScript TO YOU</title>
+</head>
+
+<body>
+    <audio autoplay="true" controls>
+        <source src="SYML.ogg" type="audio/ogg">
+        <source src="SYML.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <div id="imgbox">
+        <img class="center-fit" src="ValCard.jpeg" alt="Valentine Card">
+    </div>
+</body>
+
+</html>
