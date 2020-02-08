@@ -7,26 +7,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <style>
+        @media (min-width: 300px) and (max-width: 991px) {
+            #imgbox {
+                width: 100%;
+            }
+            .center-fit {
+                width: 100%;
+            }
+            #video{
+                width: 100%;
+            }
+        }
+        @media (min-width: 992px) {
+            #imgbox {
+                height: 100%;
+            }
+            .center-fit {
+                height: 100%;
+            }
+            #video{
+                height: 100%;
+            }
+        }
         #loader {
             z-index: 1;
             width: 100%;
             height: 100%;
-            /*margin: -75px 0 0 -75px;*/
             background-color: #181818;
           }
         #button{
             position: absolute;
-            top: 50%;
+            top: 95%;
             left: 50%;
-            /* bring your own prefixes */
             transform: translate(-50%, -50%);
-        }
-        video{
-            /*
-            width: 95%;
-            position: fixed;
-            margin-top: 80px !important;
-            */
+            background-color: #0F4C81;
+            border-width: 2px;
+            color: #F0C05A ;
+            border-color: #F0C05A;
+            width: 50%;
+            height: 6%;
         }
         body{
             background-color: #0F4C81 !important;
@@ -34,15 +53,6 @@
         * {
             margin: 0;
             padding: 0;
-        }
-        .imgbox {
-            display: none;
-            height: 100%;
-        }
-        .center-fit {
-            max-width: 100%;
-            max-height: 99vh;
-            margin: auto;
         }
         audio {
             display: none;
@@ -60,7 +70,7 @@
 
 <body>
     <div id="loader" class="centeralized">
-        <video id="video" autoplay="true" src="unwrapping.mp4"></video>
+        <video id="video" class="centeralized" autoplay="true" src="unwrapping.mp4"></video>
         <button id="button">
             Ready?😁
         </button>
@@ -71,7 +81,7 @@
             <source src="SYML.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
-        <div id="imgbox">
+        <div id="imgbox" class="centeralized">
             <img class="center-fit" src="ValCard.jpeg" alt="Valentine Card">
         </div>
     </div>
