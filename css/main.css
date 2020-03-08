@@ -10,6 +10,9 @@ html {
   box-sizing: inherit;
   font-family: "Lato", sans-serif !important; }
 
+#c {
+  font-family: 'Lalezar', cursive; }
+
 body {
   color: #dcdcdc !important; }
 
@@ -172,7 +175,8 @@ footer {
 
   #body-wrapper {
     font-size: .75rem; }
-    #body-wrapper #body-wrapper-child-head, #body-wrapper #body-wrapper-child-bottom {
+    #body-wrapper #body-wrapper-child-head,
+    #body-wrapper #body-wrapper-child-bottom {
       height: 40px; }
 
   #sub-body {
@@ -185,7 +189,8 @@ footer {
 
   #body-wrapper {
     font-size: .75rem; }
-    #body-wrapper #body-wrapper-child-head, #body-wrapper #body-wrapper-child-bottom {
+    #body-wrapper #body-wrapper-child-head,
+    #body-wrapper #body-wrapper-child-bottom {
       height: 40px; }
 
   #sub-body {
