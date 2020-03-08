@@ -1,0 +1,245 @@
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+	outline: none;
+}
+
+html {
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 1;
+	color: #fff;
+}
+
+body {
+	background-color: rgb(8, 8, 8);
+}
+
+.glitch1 {
+	font-size: 130px;
+	line-height: 1;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 900;
+	position: absolute;
+	top: 20%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	margin: 0;
+	text-decoration: none;
+	color: #fff;
+
+	&:before,
+	&:after {
+		display: block;
+		content: 'IMAN';
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		opacity: .8;
+	}
+
+	&:before {
+		color: #0ff;
+		z-index: -1;
+	}
+
+	&:after {
+		color: #f0f;
+		z-index: -2;
+	}
+	&:hover{
+		&:before{
+			animation: glitch .3s cubic-bezier(.25, .46, .45, .94) both infinite
+		}
+		&:after{
+			animation: glitch .3s cubic-bezier(.25, .46, .45, .94) reverse both infinite
+		}
+	}
+}
+.glitch2 {
+	font-size: 130px;
+	line-height: 1;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 900;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	margin: 0;
+	text-decoration: none;
+	color: #fff;
+
+	&:before,
+	&:after {
+		display: block;
+		content: 'ANOO';
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		opacity: .8;
+	}
+
+	&:before {
+		color: #0ff;
+		z-index: -1;
+	}
+
+	&:after {
+		color: #f0f;
+		z-index: -2;
+	}
+	&:hover{
+		&:before{
+			animation: glitch .3s cubic-bezier(.25, .46, .45, .94) both infinite
+		}
+		&:after{
+			animation: glitch .3s cubic-bezier(.25, .46, .45, .94) reverse both infinite
+		}
+	}
+}
+.glitch3 {
+	font-size: 130px;
+	line-height: 1;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 900;
+	position: absolute;
+	top: 60%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	margin: 0;
+	text-decoration: none;
+	color: #fff;
+
+	&:before,
+	&:after {
+		display: block;
+		content: 'SHEH';
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		opacity: .8;
+	}
+
+	&:before {
+		color: #0ff;
+		z-index: -1;
+	}
+
+	&:after {
+		color: #f0f;
+		z-index: -2;
+	}
+	&:hover{
+		&:before{
+			animation: glitch .3s cubic-bezier(.25, .46, .45, .94) both infinite
+		}
+		&:after{
+			animation: glitch .3s cubic-bezier(.25, .46, .45, .94) reverse both infinite
+		}
+	}
+}
+.glitch4 {
+	font-size: 130px;
+	line-height: 1;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 900;
+	position: absolute;
+	top: 80%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	margin: 0;
+	text-decoration: none;
+	color: #fff;
+
+	&:before,
+	&:after {
+		display: block;
+		content: 'POUR';
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		opacity: .8;
+	}
+
+	&:before {
+		color: #0ff;
+		z-index: -1;
+	}
+
+	&:after {
+		color: #f0f;
+		z-index: -2;
+	}
+	&:hover{
+		&:before{
+			animation: glitch .3s cubic-bezier(.25, .46, .45, .94) both infinite
+		}
+		&:after{
+			animation: glitch .3s cubic-bezier(.25, .46, .45, .94) reverse both infinite
+		}
+	}
+}
+.hovered1.glitch1::before{
+	animation: glitch .3s cubic-bezier(.25, .46, .45, .94) both infinite
+}
+.hovered1.glitch1::after{
+	animation: glitch .3s cubic-bezier(.25, .46, .45, .94) reverse both infinite
+}
+.hovered2.glitch2::before{
+	animation: glitch .3s cubic-bezier(.25, .46, .45, .94) both infinite
+}
+.hovered2.glitch2::after{
+	animation: glitch .3s cubic-bezier(.25, .46, .45, .94) reverse both infinite
+}
+.hovered3.glitch3::before{
+	animation: glitch .3s cubic-bezier(.25, .46, .45, .94) both infinite
+}
+.hovered3.glitch3::after{
+	animation: glitch .3s cubic-bezier(.25, .46, .45, .94) reverse both infinite
+}
+.hovered4.glitch4::before{
+	animation: glitch .3s cubic-bezier(.25, .46, .45, .94) both infinite
+}
+.hovered4.glitch4::after{
+	animation: glitch .3s cubic-bezier(.25, .46, .45, .94) reverse both infinite
+}
+
+/*#landingPage{
+	position: relative;
+	transition:all 2s linear;
+	left: 50vw;
+	top: 50vh;
+	//animation: landingTransition 4s cubic-bezier(.1, .3, .7, .9) 5s infinite;
+	&.move{
+		left: 10vw;
+	}
+}
+*/
+
+@keyframes glitch {
+	0% {transform: translate(0)}
+	20% {transform: translate(-5px, 5px)}
+	40% {transform: translate(-5px, -5px)}
+	60% {transform: translate(5px, 5px)}
+	80% {transform: translate(5px, -5px)}
+	to {transform: translate(0)}
+}
+
+@keyframes landingTransition {
+	0% {transform: translate(0)}
+	20% {transform: translate(40vw,50vh); transform: scale(0.8,0.8);}
+	40% {transform: translate(30vw,50vh); transform: scale(0.7,0.7);}
+	60% {transform: translate(20vw,50vh); transform: scale(0.6,0.6);}
+	80% {transform: translate(10vw,50vh); transform: scale(0.5,0.5);}
+	100% {transform: scale(0.4,0.4);}
+}
