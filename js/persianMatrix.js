@@ -10,7 +10,7 @@ var persian = " ا ب پ ت ث ج چ ح خ د ذ ر ز ژ س ش ص ض ط ظ ع �
 //converting the string into an array of single characters
 persian = persian.split("");
 
-var font_size = 10;
+var font_size = 16;
 var columns = c.width/font_size; //number of columns for the rain
 //an array of drops - one per column
 var drops = [];
