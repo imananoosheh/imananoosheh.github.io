@@ -28,7 +28,7 @@ function draw()
 	ctx.fillRect(0, 0, c.width, c.height);
 	
 	ctx.fillStyle = "#0F0"; //green text
-	ctx.font = font_size + "px arial";
+	ctx.font = font_size + "px Lalezar";
 	//looping over drops
 	for(var i = 0; i < drops.length; i++)
 	{
