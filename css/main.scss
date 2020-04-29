@@ -1,11 +1,10 @@
 $font-color-bright: #202020 !important;
 $font-color-dark: #dcdcdc !important;
 $font-color-dark-hover: rgb(255, 255, 255) !important;
-$brand-color:#2196F3 !important;
-$border-color: #dcdcdc !important;
-$border-color-hover: rgb(255, 255, 255) !important;
-$border-width: 3px solid $border-color;
-$border-radius: 0px !important;
+$border-color: #1BFB20 !important;
+$border-color-hover: #000 !important;
+$border-width: 2px solid $border-color;
+$border-radius: 2px !important;
 $font-family: 'Lato',
 sans-serif !important;
 
@@ -81,7 +80,7 @@ body {
     top: 5%;
     width: 90%;
     height: 90%;
-    background-color: rgba(34, 34, 34, 0.85) !important
+    background-color: #000 !important
 }
 
 #sub-body {
@@ -153,15 +152,6 @@ header {
     text-align: center;
 
 
-    //new UI testing
-    color: white;
-    background: url("/img/pttrn/PatternTextFront.png") repeat center center;
-    //background-size: 6px 6px;
-    background-clip: content-box;
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-
-
     .nav-link-main {
         border: 1px solid transparent;
         margin: 5px;
@@ -169,10 +159,21 @@ header {
 
     .nav-link-main:hover {
         border: 1px solid $border-color-hover;
-        border-radius: 0px;
-        color: $font-color-dark-hover;
+        border-radius: 2px;
+        color: transparent !important;
         text-decoration: none;
+        background: url("../img/pttrn/PatternTextBack.png") repeat center center;
     }
+}
+
+.pattfront {
+    //new UI testing
+    color: white;
+    background: url("../img/pttrn/PatternTextFront.png") repeat center center;
+    //background-size: 6px 6px;
+    background-clip: content-box;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
 }
 
 /********************HEADER STYLE|END***********************/
