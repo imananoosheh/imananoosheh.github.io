@@ -121,13 +121,13 @@ header {
   text-align: center; }
   .nav-item-main .nav-link-main {
     border: 1px solid transparent;
-    margin: 5px; }
+    margin: 5px;
+    background: url("../img/pttrn/PatternTextBack.png") repeat center center; }
   .nav-item-main .nav-link-main:hover {
     border: 1px solid #000 !important;
     border-radius: 2px;
-    color: transparent !important;
-    text-decoration: none;
-    background: url("../img/pttrn/PatternTextBack.png") repeat center center; }
+    color: black !important;
+    text-decoration: none; }
 
 .pattfront {
   color: white;
@@ -135,6 +135,8 @@ header {
   background-clip: content-box;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text; }
+  .pattfront a:hover {
+    color: black !important; }
 
 /********************HEADER STYLE|END***********************/
 /********************MAIN BODY STYLE|START***********************/
