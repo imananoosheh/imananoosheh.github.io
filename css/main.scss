@@ -152,6 +152,16 @@ header {
     flex-grow: 1;
     text-align: center;
 
+
+    //new UI testing
+    color: white;
+    background: url("/img/pttrn/PatternTextFront.png") repeat center center;
+    //background-size: 6px 6px;
+    background-clip: content-box;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+
+
     .nav-link-main {
         border: 1px solid transparent;
         margin: 5px;
