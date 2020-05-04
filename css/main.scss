@@ -159,9 +159,8 @@ header {
     }
 
     .nav-link-main:hover {
-        border: 1px solid $border-color-hover;
+        border-bottom: 1px solid $border-color;
         border-radius: 2px;
-        color: black !important;
         text-decoration: none;
     }
 }
@@ -177,7 +176,7 @@ header {
 
     a:hover{
         color: black !important;
-        //background: url("../img/pttrn/PatternTextBack.png") repeat center center;
+        background: none !important
     }
 }
 
@@ -206,16 +205,20 @@ header {
     display: -ms-flexbox;
     display: flex;
     position: relative;
-    height: 100px;
+    max-height: 150px;
     margin: auto;
 
     div {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
+        // display: -webkit-box;
+        // display: -ms-flexbox;
+        // display: flex;
         margin: auto;
-        padding: 0px 5px;
+        padding: 5px 5px;
         color: inherit;
+    }
+    p {
+        color: $border-color;
+        background-image: url(img/pttrn/PatternTextBack.png) repeat center center;
     }
 }
 
@@ -225,6 +228,10 @@ footer {
     bottom: 6%;
     border: $border-width;
     border-radius: $border-radius;
+}
+.social-badge{
+    max-width: 200px !important;
+    max-height: 35px;
 }
 
 /********************FOOTER STYLE|END***********************/
