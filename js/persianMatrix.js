@@ -1,9 +1,9 @@
-var c = document.getElementById("c");
-var ctx = c.getContext("2d");
+var canvas = document.getElementById("c");
+var ctx = canvas.getContext("2d");
 
 //making the canvas full screen
-c.height = window.innerHeight;
-c.width = window.innerWidth;
+canvas.height = window.innerHeight;
+canvas.width = window.innerWidth;
 
 //persian characters - taken from the unicode charset
 var persian = " ا ب پ ت ث ج چ ح خ د ذ ر ز ژ س ش ص ض ط ظ ع غ ف ق ک گ ل م ن و ه ی ";
@@ -11,7 +11,7 @@ var persian = " ا ب پ ت ث ج چ ح خ د ذ ر ز ژ س ش ص ض ط ظ ع �
 persian = persian.split("");
 
 var font_size = 12;
-var columns = c.width/font_size; //number of columns for the rain
+var columns = canvas.width/font_size; //number of columns for the rain
 //an array of drops - one per column
 var drops = [];
 //x below is the x coordinate
@@ -25,7 +25,7 @@ function draw()
 	//Black BG for the canvas
 	//translucent BG to show trail
 	ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-	ctx.fillRect(0, 0, c.width, c.height);
+	ctx.fillRect(0, 0, canvas.width, canvas.height);
 	
 	ctx.fillStyle = "#0F0"; //green text
 	ctx.font = font_size + "px Lalezar";
@@ -39,7 +39,7 @@ function draw()
 		
 		//sending the drop back to the top randomly after it has crossed the screen
 		//adding a randomness to the reset to make the drops scattered on the Y axis
-		if(drops[i]*font_size > c.height && Math.random() > 0.975)
+		if(drops[i]*font_size > canvas.height && Math.random() > 0.975)
 			drops[i] = 0;
 		
 		//incrementing Y coordinate

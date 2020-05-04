@@ -2,6 +2,7 @@ $font-color-bright: #202020 !important;
 $font-color-dark: #dcdcdc !important;
 $font-color-dark-hover: rgb(255, 255, 255) !important;
 $border-color: #1BFB20 !important;
+$border-color-80: rgba(27, 251, 32, 0.8);
 $border-color-hover: #000 !important;
 $border-width: 2px solid $border-color;
 $border-radius: 2px !important;
@@ -166,17 +167,13 @@ header {
 }
 
 .pattfront {
-    //new UI testing
-    color: white;
-    background: url("../img/pttrn/PatternTextFront.png") repeat center center;
-    //background-size: 6px 6px;
-    background-clip: content-box;
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
+    a {
+        color: $border-color-80;
+    }
 
-    a:hover{
-        color: black !important;
-        background: none !important
+    a:hover {
+        color: $border-color;
+        background: none !important;
     }
 }
 
@@ -189,12 +186,28 @@ header {
     height: 0px;
     width: 100%;
     margin: 10px 0px;
+    overflow: auto;
 }
 
 #main-body-child {
-    overflow: auto;
-    height: 100%;
+    //overflow: auto;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    width: 80%;
     text-align: center;
+
+    img {
+        max-height: 150px;
+        margin: 0.5rem 0rem;
+    }
+}
+
+.bio {
+    color: black;
+    background-color: $border-color;
+    font-size: 1.25rem;
 }
 
 /********************MAIN BODY STYLE|END***********************/
@@ -216,9 +229,10 @@ header {
         padding: 5px 5px;
         color: inherit;
     }
+
     p {
         color: $border-color;
-        background-image: url(img/pttrn/PatternTextBack.png) repeat center center;
+        background-image: url(../img/pttrn/PatternTextBack.png) repeat center center;
     }
 }
 
@@ -229,7 +243,8 @@ footer {
     border: $border-width;
     border-radius: $border-radius;
 }
-.social-badge{
+
+.social-badge {
     max-width: 200px !important;
     max-height: 35px;
 }
@@ -257,6 +272,9 @@ footer {
         padding: 40px 30px;
         border: $border-width;
         border-radius: $border-radius;
+    }
+    .bio{
+        font-size: 0.75rem;
     }
 }
 

@@ -128,15 +128,11 @@ header {
     border-radius: 2px;
     text-decoration: none; }
 
-.pattfront {
-  color: white;
-  background: url("../img/pttrn/PatternTextFront.png") repeat center center;
-  background-clip: content-box;
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text; }
-  .pattfront a:hover {
-    color: black !important;
-    background: none !important; }
+.pattfront a {
+  color: rgba(27, 251, 32, 0.8); }
+.pattfront a:hover {
+  color: #1BFB20 !important;
+  background: none !important; }
 
 /********************HEADER STYLE|END***********************/
 /********************MAIN BODY STYLE|START***********************/
@@ -146,12 +142,24 @@ header {
   border-radius: 2px !important;
   height: 0px;
   width: 100%;
-  margin: 10px 0px; }
+  margin: 10px 0px;
+  overflow: auto; }
 
 #main-body-child {
-  overflow: auto;
-  height: 100%;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  width: 80%;
   text-align: center; }
+  #main-body-child img {
+    max-height: 150px;
+    margin: 0.5rem 0rem; }
+
+.bio {
+  color: black;
+  background-color: #1BFB20 !important;
+  font-size: 1.25rem; }
 
 /********************MAIN BODY STYLE|END***********************/
 /********************FOOTER STYLE|START***********************/
@@ -168,7 +176,7 @@ header {
     color: inherit; }
   #contact p {
     color: #1BFB20 !important;
-    background-image: url(img/pttrn/PatternTextBack.png) repeat center center; }
+    background-image: url(../img/pttrn/PatternTextBack.png) repeat center center; }
 
 footer {
   position: -webkit-sticky;
@@ -196,7 +204,10 @@ footer {
   #sub-body {
     padding: 40px 30px;
     border: 2px solid #1BFB20 !important;
-    border-radius: 2px !important; } }
+    border-radius: 2px !important; }
+
+  .bio {
+    font-size: 0.75rem; } }
 @media (min-width: 576px) and (max-width: 767.98px) {
   #body-wrapper {
     border-width: 40px 30px; }
