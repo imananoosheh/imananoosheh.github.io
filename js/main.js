@@ -13,8 +13,8 @@ function responsiveMainBody() {
     var mbc = $('#main-body');
     var footerHeight = $('FOOTER').height();
     var headerHeight = $('HEADER').height();
-    //var mbcHeight = window.innerHeight - footerHeight - headerHeight - 180;
-    var mbcHeight = window.innerHeight * 0.6;
+    var mbcHeight = window.innerHeight - footerHeight - headerHeight - 150;
+    //var mbcHeight = window.innerHeight * 0.4;
     mbc.height(mbcHeight);
 }
 

@@ -103,6 +103,7 @@ header {
     top: 6%;
     border: $border-width;
     border-radius: $border-radius;
+    margin: 0px 0px 10px 0px;
 }
 
 #navigation-main {
@@ -185,7 +186,7 @@ header {
     border-radius: $border-radius;
     height: 0px;
     width: 100%;
-    margin: 10px 0px;
+    margin: 0px 0px 10px 0px;
     overflow: auto;
 }
 
@@ -270,8 +271,6 @@ footer {
 
     #sub-body {
         padding: 40px 30px;
-        border: $border-width;
-        border-radius: $border-radius;
     }
     .bio{
         font-size: 0.75rem;
