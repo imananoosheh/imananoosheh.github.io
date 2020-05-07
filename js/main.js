@@ -16,6 +16,15 @@ function responsiveMainBody() {
     var mbcHeight = window.innerHeight - footerHeight - headerHeight - 170;
     //var mbcHeight = window.innerHeight * 0.4;
     mbc.height(mbcHeight);
+    if (document.getElementById("embedPDF")) {
+        var abc = $('#main-body-child');
+        $(abc).css("width", "96%");
+        var embed_PDF_Height = document.getElementById("embedPDF");
+        var elementwidth = ($('#main-body-child').width * 0.9);
+        embed_PDF_Height.setAttribute("height", mbcHeight+"px");
+        embed_PDF_Height.setAttribute("width", "96%");
+    }
+
 }
 
 function startupFunctions() {
