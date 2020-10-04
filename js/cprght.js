@@ -1,5 +1,5 @@
-function xYZscroll() {
-    window.scrollBy(0, 10000);
+function xYZscroll(scrollValue = 10000) {
+    window.scrollBy(0, scrollValue);
 }
 
 currentYear = new Date().getFullYear()
@@ -26,6 +26,8 @@ copyright += '<div id="copyright" class="my-2">' +
 
 
 $("footer").after(copyright);
+
+
 var cRButton = document.getElementById('copyright-button');
 cRButton.addEventListener("click", function () {
     xYZscroll();
