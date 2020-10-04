@@ -1,7 +1,5 @@
 function xYZscroll() {
-    $("html, body").animate({
-        scrollTop: 100000
-    }, 600);
+    window.scrollBy(0, 10000);
 }
 
 currentYear = new Date().getFullYear()
