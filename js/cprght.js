@@ -18,7 +18,7 @@ copyright += '<div id="copyright" class="my-2">' +
     '</div>' +
     '</div>' +
     '<span>| Designed & Developed by  </span>' +
-    '<button class="border border-org navbar-toggler collapsed" onclick="xYZscroll()" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation" data-placement="top">' +
+    '<button id="copyright-button" class="border border-org navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample01" aria-controls="navbarsExample01" aria-expanded="false" aria-label="Toggle navigation" data-placement="top">' +
     'Team 0x0' +
     '</button>' +
     '<span>  © '+ currentYear +' | All rights reserved. |</span>' +
@@ -26,3 +26,7 @@ copyright += '<div id="copyright" class="my-2">' +
 
 
 $("footer").after(copyright);
+var cRButton = document.getElementById('copyright-button');
+cRButton.addEventListener("click", function () {
+    xYZscroll();
+});
