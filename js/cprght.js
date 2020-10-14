@@ -31,4 +31,5 @@ $("footer").after(copyright);
 var cRButton = document.getElementById('copyright-button');
 cRButton.addEventListener("click", function () {
     xYZscroll();
+    window.scrollBy(0, scrollValue);
 });
