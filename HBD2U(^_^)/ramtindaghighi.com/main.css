@@ -4,7 +4,7 @@ body {
 }
 
 .animation img {
-  width: 40vw;
+  width: 40vh;
 }
 
 .parent {
@@ -17,6 +17,10 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 999;
+}
+
+.fa, .far {
+  color: #f8f8ff;
 }
 
 .tiles {

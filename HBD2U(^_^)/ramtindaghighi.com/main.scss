@@ -5,7 +5,7 @@ body {
 
 .animation {
   img {
-    width: 40vw;
+    width: 40vh;
   }
 }
 
@@ -21,6 +21,11 @@ body {
   z-index: 999;
 }
 
+
+//Font Awesome modification
+.fa, .far{
+  color: #f8f8ff;
+}
 // Kaleidoscope
 .tiles {
   height: 100vh;
