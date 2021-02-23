@@ -23,9 +23,15 @@ body {
 
 
 //Font Awesome modification
-.fa, .far{
+.fa, .far {
   color: #f8f8ff;
 }
+
+.fa-instagram:hover {
+  transform: scale(1.5);
+  color: white;
+}
+
 // Kaleidoscope
 .tiles {
   height: 100vh;

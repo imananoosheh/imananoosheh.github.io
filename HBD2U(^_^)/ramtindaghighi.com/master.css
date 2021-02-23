@@ -1,0 +1,63 @@
+/*html {*/
+/*    font-family: 'Lato', sans-serif;*/
+/*    color: #fff;*/
+/*    line-height: 1;*/
+/*    background-color: rgb(70, 70, 70);*/
+/*}*/
+#cssloader {
+    position: absolute;
+    display: flex;
+    margin: auto;
+    width: 90%;
+    height: 35vh;
+    top: 10vh;
+    background: rgb(32, 36, 40);
+    -moz-animation: cssAnimation 0s ease-in 9999999s forwards;
+    /* Firefox */
+    -webkit-animation: cssAnimation 0s ease-in 9999999s forwards;
+    /* Safari and Chrome */
+    -o-animation: cssAnimation 0s ease-in 9999999s forwards;
+    /* Opera */
+    animation: cssAnimation 0s ease-in 9999999s forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+@keyframes cssAnimation {
+    to {
+        width: 0;
+        height: 0;
+        overflow: hidden;
+    }
+}
+
+@-webkit-keyframes cssAnimation {
+    to {
+        width: 0;
+        height: 0;
+        visibility: hidden;
+    }
+}
+
+#cssloader > div {
+    display: flex;
+    margin: auto;
+}
+
+#title {
+    position: fixed;
+    display: felx;
+    top: 10%;
+    right: 2%;
+    left: 2%;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#quote {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+}

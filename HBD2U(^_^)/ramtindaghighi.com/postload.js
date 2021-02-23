@@ -28,11 +28,14 @@ function change_address() {
 }
 
 document.getElementsByClassName("material-icons")[0].addEventListener("click", function () {
-    if (this.innerHTML == "close") {
-        this.innerHTML = "menu";
-    } else {
+    if (this.innerHTML == "menu") {
+        document.getElementsByClassName("waiting d-none")[0].className = "waiting d-block";
         this.innerHTML = "close";
+    } else if (this.innerHTML == "close") {
+        document.getElementsByClassName("waiting d-block")[0].className = "waiting d-none";
+        this.innerHTML = "menu";
     }
 });
 
-setInterval(change_address, 15);
+
+setInterval(change_address, 1500);
