@@ -6,7 +6,7 @@ canvas.height = window.innerHeight;
 canvas.width = window.innerWidth;
 
 //persian characters - taken from the unicode charset
-var persian = " A B C D E F G H I J K L M N O P Q R S T U V W X Y Z あ い う え お か き く け こ さ し す せ そ た ち つ て と な に ぬ ね の は ひ ふ へ ほ ま み む め も や ゆ よ ら り る れ ろ わ ゐ ゑ を 1 2 3 4 5 6 7 8 9 0 0 0A B C D E F G H I J K L M N O P Q R S T U V W X Y Z	";
+var persian = "ص ض ط ظ ع غ ف ق ک گ ل م ن و ی ۱ ۲ ۳ ۴ ۵ ۶ ۷ ۸ ۹ ۰ ھ آ ب پ ت ث ج چ ح خ د ذ ر ز ژ س ش ه ";
 //converting the string into an array of single characters
 persian = persian.split("");
 
@@ -26,9 +26,11 @@ function draw()
 	//translucent BG to show trail
 	ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
 	ctx.fillRect(0, 0, canvas.width, canvas.height);
+	// ctx.fillStyle = "rgba(40, 40 , 40, 0.1)";
+	// ctx.fillRect(0, 0, canvas.width, canvas.height);
 	
 	ctx.fillStyle = "#0F0"; //green text
-	ctx.font = font_size + "px Nanum Gothic Coding";
+	ctx.font = font_size + "px Lalezar";
 	//looping over drops
 	for(var i = 0; i < drops.length; i++)
 	{

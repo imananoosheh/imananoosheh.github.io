@@ -1,17 +1,164 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Lalezar&display=swap'); */
-/* @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&family=Roboto+Mono:wght@200;400;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Lalezar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&family=Roboto+Mono:wght@200;400;700&display=swap');
 /* font-family: 'Roboto Mono', monospace; */
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap'); */
 
+:root{
+    --matrix-green-color: #0F0;
+    --dark-background-color: #212121;
+    --bright-text-color: #ececec;
+}
 *{
     box-sizing: border-box;
     margin: 0;
+    font-family: 'Roboto Mono', monospace;
 }
 html{
-    background-color: black;
+    background-color: var(--dark-background-color);
 }
 canvas#matrix{
     display: block;
-    font-family: 'Nanum Gothic Coding', monospace;
-    font-size: 8em;
+}
+#matrix-overlay{
+    background-color: var(--dark-background-color);
+    opacity: 0.5;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.main-structure{
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2em;
+}
+.main-structure > .item {
+    border: 2px solid var(--matrix-green-color);
+    align-self: center;
+    width: 100%;
+}
+.header{
+    height: 12.5%;
+}
+.content{
+    height: 70%;
+}
+.footer{
+    height: 12.5%;
+}
+
+/* Hambergur Menu Section */
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+}
+
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--matrix-green-color);
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-item {
+    margin-left: 5rem;
+    background: url("../img/pttrn/PatternTextBack.png") repeat center center;
+}
+
+.nav-item > a{
+    color: var(--matrix-green-color);
+}
+
+.nav-link{
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--bright-text-color);
+}
+
+.nav-item:hover{
+    background: transparent;
+    border-bottom: 2px solid var(--matrix-green-color);
+}
+
+.nav-logo {
+    background-image: url('../img/logo/v3-pipboy-version-500X500.png');
+}
+.nav-logo > img {
+    width: 50px;
+}
+
+@media only screen and (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 6rem;
+        flex-direction: column;
+        background-color: black;
+        width: 95%;
+        text-align: center;
+        transition: 0.3s;
+        border: 2px solid var(--matrix-green-color);
+        /* box-shadow:
+            0 10px 27px rgba(0, 0, 0, 0.05); */
+    }
+
+    .nav-menu.active {
+        left: 2.5%;
+    }
+
+    .nav-item {
+        margin: 2.5rem 0;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger.active{
+        border: 2px solid var(--matrix-green-color);
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        -webkit-transform: translateY(8px) rotate(45deg);
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        -webkit-transform: translateY(-8px) rotate(-45deg);
+        transform: translateY(-8px) rotate(-45deg);
+    }
 }
