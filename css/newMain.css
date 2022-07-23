@@ -1,0 +1,17 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Lalezar&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&family=Roboto+Mono:wght@200;400;700&display=swap'); */
+/* font-family: 'Roboto Mono', monospace; */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+html{
+    background-color: black;
+}
+canvas#matrix{
+    display: block;
+    font-family: 'Nanum Gothic Coding', monospace;
+    font-size: 8em;
+}
