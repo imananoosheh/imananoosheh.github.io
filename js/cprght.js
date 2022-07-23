@@ -2,7 +2,7 @@ function xYZscroll(scrollValue = 10000) {
     window.scrollBy(0, scrollValue);
 }
 
-currentYear = new Date().getFullYear()
+const currentYear = new Date().getFullYear()
 var copyright = '';
 copyright += '<div id="copyright" class="my-2">' +
     '<div class="navbar-collapse collapse" id="navbarsExample01">' +
