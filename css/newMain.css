@@ -66,7 +66,8 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 1.5rem;
+    padding: 0rem 1.5rem;
+    height: 100%;
 }
 
 .hamburger {
@@ -110,10 +111,23 @@ a {
 }
 
 .nav-logo {
-    background-image: url('../img/logo/v3-pipboy-version-500X500.png');
+    background-image: url('/img/logo/v3-pipboy-version-500X500.png');
+    background-size: contain;
+    position: relative;
+    height: 85px;
+    width: 85px;
+    border: none;
 }
+.nav-logo::before{
+    position: absolute;
+    width: 81px;
+    height: 58px;
+    content: "";
+    }
 .nav-logo > img {
-    width: 50px;
+    max-width: 85px;
+    width: auto;
+    object-fit: fill;
 }
 
 @media only screen and (max-width: 768px) {
@@ -123,7 +137,7 @@ a {
         top: 6rem;
         flex-direction: column;
         background-color: black;
-        width: 95%;
+        width: 95vw;
         text-align: center;
         transition: 0.3s;
         border: 2px solid var(--matrix-green-color);
@@ -133,11 +147,24 @@ a {
 
     .nav-menu.active {
         left: 2.5%;
+        padding: 0 2em;
     }
 
     .nav-item {
         margin: 2.5rem 0;
     }
+    .nav-logo.active{
+        z-index: 2;
+        background-color: black;
+        transition: 0.3s;
+    }
+    .nav-logo.active::before {
+        left: 0;
+        top: 0;
+        border-left: 2px solid var(--matrix-green-color);
+        border-top: 2px solid var(--matrix-green-color);
+        border-right: 2px solid var(--matrix-green-color);
+       }
 
     .hamburger {
         display: block;
