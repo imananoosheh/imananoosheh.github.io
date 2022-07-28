@@ -48,9 +48,13 @@ canvas#matrix{
 }
 .content{
     height: 70%;
-}
-.footer{
-    height: 12.5%;
+    color: var(--matrix-green-color);
+    text-shadow: #212121;
+    overflow-y: auto;
+    padding: 0.5rem;
+    text-align: center;
+    scroll-behavior: smooth;
+    scrollbar-color: var(--dark-background-color) var(--matrix-green-color);
 }
 
 /* Hambergur Menu Section */
@@ -62,10 +66,11 @@ a {
     text-decoration: none;
 }
 
-.navbar {
+.navbar{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: row;
     padding: 0rem 1.5rem;
     height: 100%;
 }
@@ -111,24 +116,47 @@ a {
 }
 
 .nav-logo {
-    background-image: url('/img/logo/v3-pipboy-version-500X500.png');
-    background-size: contain;
-    position: relative;
-    height: 85px;
-    width: 85px;
+    /* background-image: url('/img/logo/v3-pipboy-version-500X500.png');
+    background-size: contain; */
+    /* position: relative; */
+    /* height: 85px;
+    width: 85px; */
     border: none;
+    display: flex;
+    align-self: stretch;
+    justify-content: flex-start;
 }
-.nav-logo::before{
-    position: absolute;
-    width: 81px;
-    height: 58px;
-    content: "";
-    }
-.nav-logo > img {
-    max-width: 85px;
-    width: auto;
-    object-fit: fill;
+.nav-logo > img{
+    max-width: 100%;
+    height: auto;
 }
+.footer{
+    height: 12.5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem 1rem;
+}
+.footer-content{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem 2rem;
+}
+.footer-content a{
+    align-self: center;
+    text-align: center;
+}
+.footer-content img{
+    max-height: 5vh;
+}
+.footer-copyright{
+    color: var(--matrix-green-color);
+    text-align: center;
+}
+
 
 @media only screen and (max-width: 768px) {
     .nav-menu {
@@ -158,13 +186,13 @@ a {
         background-color: black;
         transition: 0.3s;
     }
-    .nav-logo.active::before {
+    /* .nav-logo.active::before {
         left: 0;
         top: 0;
         border-left: 2px solid var(--matrix-green-color);
         border-top: 2px solid var(--matrix-green-color);
         border-right: 2px solid var(--matrix-green-color);
-       }
+       } */
 
     .hamburger {
         display: block;
