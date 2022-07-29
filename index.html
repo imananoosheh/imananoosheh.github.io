@@ -1,100 +1,104 @@
-<!doctype html>
-<html lang="en" dir="ltr">
-
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Iman Anoosheh | Portofolio</title>
-  <link rel='icon' href='favicon.ico' type='image/x-icon' />
-  <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Lato:ital,wght@0,300;0,400;1,900&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/bs/bootstrap.min.css">
-  <link rel="stylesheet" href="css/persianMatrix.css">
-  <script defer src="js/bs/bootstrap.min.js"></script>
-  <script defer src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
-  </script>
-  <script defer src="js/main.js"></script>
-  <script defer src="js/persianMatrix.js"></script>
-</head>
-
-<body onresize="responsiveMainBody()" onload="startupFunctions()">
-  <h1 id="title-header" style="color:transparent">IMAN ANOOSHEH | PORTFOLIO</h1>
-  <canvas id="c"></canvas>
-  <!--<div id="body-wrapper">
-    <div id="body-wrapper-child-head"></div>
-    <div id="body-wrapper-child-bottom">
-      <p>
-          | Designed & Developed by Iman Anooshehpour © 2018 |<br>| All rights reserved. |
-      </p>
-    </div>
-  </div>-->
-  <div id="sub-body-background"></div>
-  <div id="sub-body">
-    <!--HEADER-->
-    <header>
-      <nav id="navigation-main">
-        <ul class="nav-main pattfront">
-          <li class="nav-item-main">
-            <a class="nav-link-main" href="/">HOME</a>
-          </li>
-          <li class="nav-item-main">
-            <a class="nav-link-main"
-              href="/resume.html">RESUME</a>
-          </li>
-          <li class="nav-item-main">
-            <a class="nav-link-main" href="/proj/project.html">PROJECTS</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <!----------------------------------------------------------------------------->
-    <!--MAIN BODY-->
-    <div id="main-body">
-      <div id="main-body-child">
-        <img src="img/logo/v3-pipboy-version-500X500.png" alt="Logo">
-        <p class="bio">
-          It was almost 3 years ago, about the end of 2015 when I understood my strongest motivation in life is
-          creation. Even the slightest possibility of me being a creator makes me put all my affords into creating
-          something brand new, from scratch. All these sweatings give me a unique feeling of parenthood over what is
-          created.</p>
-        <p class="bio">first time I felt this, was at a C++ programming class; It was like an epiphany which said I can
-          create anything I want!; even then I knew when It comes to practical work there will be challenges to face but
-          I also knew the only limitation is my imagination.I'm highly interested in Machine Learning and Artificial
-          Intelligence because not only they can be created but also they have the ability to grow which amplifies my
-          sense of parenthood and gives me tremendous amount of satisfaction.</p>
-        <p class="bio">And I always had those organizing and
-          analyzing characteristics; I always want to analyze behaviors and any kind of chain reaction to find
-          correlations; I think this helped me to debug my programs, technologies I work with, my surroundings and even
-          my life to some extent.</p>
-        <p class="bio">I have been a local and a national vice-president in AIESEC organization in Iran. I
-          have traveled to different
-          countries around the globe during 3 years of my work experience, which gave me the opportunity to delegate in
-          different conferences and seminars whereas being an Agenda Manager, Facilitator, Conference Manager and
-          Organizing Committee President in most of them. These 3 years of experience empowered my soft skills such as
-          teamwork, communication skills, problem-solving, organizational skills and crisis management.</p>
-        <p class="bio">As I got more
-          interested in the field of Artificial Neural Network (ANN) and Machine Learning, I took
-          difference coursed and self-studied the fields and practiced to solve more problem which helped me to learn
-          and pushed me to gain practical skills to work with proper tools such as R language, Keras, Numpy, Matplotlib,
-          Scipy, Pandas and etc. I always find myself more effective and learning more when it comes to practical
-          projects, which is reflected in my labs’ grades.</p>
-        <p class="bio">Since 2015, I practiced my web development skills such as
-          HTML5, CSS3, SASS, JavaScript, JQuery, Bootstrap,
-          Vue.js, Django, Jinja, Wordpress and etc in different projects.
-        </p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel='icon' type='image/png' href='/favicon.ico'>
+    <link rel='apple-touch-icon' href='/favicon.ico'>
+    <meta name='msapplication-square150x150logo' content='/favicon.ico'>
+    <title>Iman Anoosheh | Portfolio</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <script defer src="/js/persianMatrix.js"></script>
+    <script defer src="/js/main.js"></script>
+  </head>
+  <body>
+    <canvas id="matrix"></canvas>
+    <div id="matrix-overlay"></div>
+    <div class="main-structure">
+      <div class="item header">
+        <div class="navbar">
+          <div class="nav-logo">
+            <img
+              src="/img/logo/v3-pipboy-version-500X500.png"
+              alt="personal logo"
+            />
+          </div>
+          <ul class="nav-menu">
+            <li class="nav-item" data-home>
+              <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a target="_blank" href="/docs/Iman Anooshehpour Resume.pdf" class="nav-link"
+                >Resume</a
+              >
+            </li>
+            <li data-projects class="nav-item">
+              <a href="#" class="nav-link">Projects</a>
+            </li>
+          </ul>
+          <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+        </div>
+      </div>
+      <div class="item content" data-content-section>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+        euismod neque id tincidunt mattis. Nullam commodo arcu quis quam
+        pharetra, sit amet feugiat tortor viverra. Fusce quis malesuada ligula,
+        a consequat eros. Quisque dapibus nisi at nunc vulputate, in posuere
+        massa scelerisque. Ut vel justo iaculis, malesuada tellus at, consequat
+        justo. Etiam quam neque, porttitor eu viverra aliquam, lobortis id diam.
+        Nulla pulvinar pulvinar lectus, ac luctus ligula consequat et. Vivamus
+        nec nunc turpis. Suspendisse euismod eros iaculis eleifend vestibulum.
+        Vestibulum nibh eros, viverra et odio sed, rhoncus suscipit neque.
+        Curabitur vel risus faucibus, tristique libero vitae, accumsan mi.
+        Quisque tincidunt arcu id iaculis aliquam. Fusce pretium vestibulum
+        enim, a imperdiet massa laoreet at. Suspendisse cursus maximus rhoncus.
+        Morbi varius felis vitae sollicitudin condimentum. Ut ultrices, nisi sit
+        amet accumsan blandit, felis neque sagittis nibh, sit amet blandit justo
+        dolor eget lectus. Duis convallis odio non justo bibendum, vel dictum
+        lacus ultricies. Sed mauris neque, auctor ut dolor quis, interdum semper
+        tellus. Nullam convallis molestie leo, tristique iaculis tortor
+        sollicitudin sed. Vestibulum interdum nulla a nibh dapibus iaculis. Duis
+        vestibulum aliquet erat ut hendrerit. Phasellus ac dignissim metus.
+        Mauris dapibus turpis id elit facilisis, sed tincidunt augue tristique.
+        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+        inceptos himenaeos. In quis interdum sapien. Nulla a lectus at ante
+        efficitur pretium. Vestibulum scelerisque tincidunt rhoncus. Curabitur
+        eget laoreet quam, eu hendrerit sem. Sed pretium scelerisque faucibus.
+        Aliquam erat volutpat. Phasellus ante tellus, rutrum vitae libero sit
+        amet, dictum pharetra mi. Vivamus hendrerit purus tortor, vel euismod
+        mauris auctor tempor. Phasellus et pretium lacus. Phasellus metus dolor,
+        elementum dictum mattis in, facilisis nec nisl. Morbi facilisis
+        porttitor massa. Praesent euismod, neque quis vulputate bibendum, arcu
+        enim mattis neque, id molestie velit tortor sit amet quam. Nulla cursus
+        est et dolor efficitur, id blandit sapien dapibus. Etiam et risus eu
+        nisi tincidunt fringilla. Donec ultrices finibus metus, suscipit
+        fermentum ligula malesuada quis. Pellentesque sem libero, sollicitudin
+        at tortor sit amet, accumsan pulvinar nibh. Ut tincidunt, est et
+        ullamcorper feugiat, lacus felis efficitur nisl, vel efficitur leo risus
+        eu eros. Curabitur tristique, eros nec aliquam facilisis, nisi velit
+        commodo lacus, sit amet posuere risus sem vel erat. Duis purus eros,
+        efficitur ut magna vehicula, gravida aliquam nulla. Sed ultricies tellus
+        ut leo facilisis venenatis. Integer eget lacus euismod, sodales tortor
+        eget, euismod turpis. Suspendisse dictum urna vitae pharetra volutpat.
+        Praesent elementum lorem blandit magna condimentum tempor. Nulla vitae
+        tincidunt ex, sed luctus ex.
+      </div>
+      <div class="item footer">
+        <div class="footer-content">
+          <a target="_blank" href="https://github.com/imananoosheh">
+            <img src="/img/logo/GitHub_custom_icon.png" alt="" />
+          </a>
+          <a target="_blank" href="https://www.linkedin.com/in/imananoosheh/">
+            <img src="/img/logo/LinkedIn_custom_icon_2.png" alt="" />
+          </a>
+        </div>
+        <div data-copyright class="footer-copyright"></div>
       </div>
     </div>
-    <!----------------------------------------------------------------------------->
-    <!--FOOTER-->
-    <footer>
-      <div id="contact"></div>
-    </footer>
-    <!----------------------------------------------------------------------------->
-  </div>
-</body>
-
+  </body>
 </html>

@@ -1,32 +1,69 @@
+// Hamberger Menu intractions
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+const navLink = document.querySelectorAll(".nav-link");
+const navLogo = document.querySelector(".nav-logo");
+const copyRight = document.querySelector('[data-copyright]')
 const currentYear = new Date().getFullYear()
-function xYZ() {
-    const replacement = `<div class="row text-center"> 
-        <div class="col-lg-6 col-md-12 social-badge"><a href="https://www.linkedin.com/in/imananoosheh/"><img src="img/badges/LinkedIn_Logo_Modified.svg" alt="My GitHub Profile"></a></div> 
-        <div class="col-lg-6 col-md-12 social-badge"><a href="https://github.com/imananoosheh/"><img src="img/badges/GitHub_logo_2013_modified.svg" alt="My GitHub Profile"></a></div> 
-        <div class="col-12"><p>Copyright © 2015-${currentYear} Iman Anooshehpour All Rights Reserved.</p></div> 
-        </div>`;
-    return replacement;
-}
-$('#contact').empty().html(xYZ());
+const projectsPageButton = document.querySelector('[data-projects]')
+const homePageButton = document.querySelector('[data-home]')
+const contentSection = document.querySelector('[data-content-section]')
 
-function responsiveMainBody() {
-    var mbc = $('#main-body');
-    var footerHeight = $('FOOTER').height();
-    var headerHeight = $('HEADER').height();
-    var mbcHeight = window.innerHeight - footerHeight - headerHeight - 170;
-    //var mbcHeight = window.innerHeight * 0.4;
-    mbc.height(mbcHeight);
-    if (document.getElementById("embedPDF")) {
-        var abc = $('#main-body-child');
-        $(abc).css("width", "96%");
-        var embed_PDF_Height = document.getElementById("embedPDF");
-        var elementwidth = ($('#main-body-child').width * 0.9);
-        embed_PDF_Height.setAttribute("height", mbcHeight+"px");
-        embed_PDF_Height.setAttribute("width", "96%");
-    }
+hamburger.addEventListener("click", mobileMenu);
+navLink.forEach(n => n.addEventListener("click", closeMenu));
 
+function mobileMenu() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+    navLogo.classList.toggle("active");
 }
 
-function startupFunctions() {
-    responsiveMainBody();
+function closeMenu() {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+    navLogo.classList.remove("active");
 }
+copyRight.textContent = `Copyright © 2015-${currentYear} | Iman Anooshehpour All Rights Reserved.`
+
+let siteContent = null
+async function fetchSiteContent(){
+    let siteContentResponse = await fetch('/js/content.json', {method: 'GET'});
+    siteContent = await siteContentResponse.json();
+}
+fetchSiteContent();
+
+function projectTemplating(address, demoVideoAddress, description){
+    const project = document.createElement('div')
+    project.classList.add('project')
+    const projectVideo = document.createElement('video')
+    projectVideo.src = demoVideoAddress
+    projectVideo.autoplay = true
+    projectVideo.loop = true
+    project.appendChild(projectVideo)
+    const projectDescription = document.createElement('p')
+    projectDescription.textContent = description
+    project.appendChild(projectDescription)
+    const projectButton = document.createElement('a')
+    projectButton.href = address
+    projectButton.target = "_blank"
+    projectButton.textContent = 'Take Me There! ->'
+    project.appendChild(projectButton)
+    return project
+}    
+
+projectsPageButton.addEventListener('click', async ()=>{
+    
+    contentSection.textContent = ''
+    const projectsWrapper = document.createElement('div')
+    projectsWrapper.classList.add('project-wrapper')
+    contentSection.appendChild(projectsWrapper)
+    siteContent["projects"].forEach(project => {
+        projectsWrapper.appendChild(projectTemplating(project["address"],project["demo-video"],project["description"]))
+    })
+})
+
+function loadHome(){
+    contentSection.textContent = siteContent["home"]["text"]
+}
+
+homePageButton.addEventListener('click', loadHome)
