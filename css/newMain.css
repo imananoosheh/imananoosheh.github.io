@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Lalezar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&family=Roboto+Mono:wght@200;400;700&display=swap');
+
+:root{
+    --matrix-green-color: #0F0;
+    --dark-background-color: #212121;
+    --bright-text-color: #ececec;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Roboto Mono', monospace;
+}
+html{
+    background-color: var(--dark-background-color);
+}
+canvas#matrix{
+    display: block;
+}
+#matrix-overlay{
+    background-color: var(--dark-background-color);
+    opacity: 0.65;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.main-structure{
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2em;
+}
+.main-structure > .item {
+    border: 2px solid var(--matrix-green-color);
+    align-self: center;
+    width: 100%;
+}
+.header{
+    height: 12.5%;
+}
+.content{
+    height: 70%;
+    color: var(--matrix-green-color);
+    text-shadow: #212121;
+    overflow-y: auto;
+    padding: 0.5rem;
+    text-align: center;
+    scroll-behavior: smooth;
+    scrollbar-color: var(--dark-background-color) var(--matrix-green-color);
+}
+
+/* Hambergur Menu Section */
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 0rem 1.5rem;
+    height: 100%;
+}
+
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--matrix-green-color);
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-item {
+    margin-left: 5rem;
+    background: url("../img/pttrn/PatternTextBack.png") repeat center center;
+}
+
+.nav-item > a{
+    color: var(--matrix-green-color);
+}
+
+.nav-link{
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--bright-text-color);
+}
+
+.nav-item:hover{
+    background: transparent;
+    border-bottom: 2px solid var(--matrix-green-color);
+}
+
+.nav-logo {
+    border: none;
+    display: flex;
+    align-self: stretch;
+    justify-content: flex-start;
+}
+.nav-logo > img{
+    max-width: 100%;
+    height: auto;
+}
+.footer{
+    height: 12.5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.footer-content{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    column-gap: 2rem;
+}
+.footer-content a{
+    align-self: center;
+    text-align: center;
+}
+.footer-content img{
+    max-height: 5vh;
+}
+.footer-copyright{
+    color: var(--matrix-green-color);
+    text-align: center;
+    font-weight: bold;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .main-structure{
+        padding: 1em;
+    }
+    .footer-copyright{
+        font-size: 12px;
+    }
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 5.5rem;
+        flex-direction: column;
+        background-color: black;
+        width: 95vw;
+        text-align: center;
+        transition: 0.3s;
+        border: 2px solid var(--matrix-green-color);
+    }
+
+    .nav-menu.active {
+        left: 2.5%;
+        padding: 0 2em;
+    }
+
+    .nav-item {
+        margin: 2.5rem 0;
+    }
+    .nav-logo.active{
+        z-index: 2;
+        transition: 0.3s;
+    }
+    .nav-logo.active img{
+        filter: drop-shadow(0 1rem 2px black);
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger.active{
+        border: 2px solid var(--matrix-green-color);
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        -webkit-transform: translateY(8px) rotate(45deg);
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        -webkit-transform: translateY(-8px) rotate(-45deg);
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
