@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lalezar&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&family=Roboto+Mono:wght@200;400;700&display=swap');
-/* font-family: 'Roboto Mono', monospace; */
-/* @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap'); */
 
 :root{
     --matrix-green-color: #0F0;
@@ -116,11 +114,6 @@ a {
 }
 
 .nav-logo {
-    /* background-image: url('/img/logo/v3-pipboy-version-500X500.png');
-    background-size: contain; */
-    /* position: relative; */
-    /* height: 85px;
-    width: 85px; */
     border: none;
     display: flex;
     align-self: stretch;
@@ -136,14 +129,13 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 0.5rem 1rem;
 }
 .footer-content{
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-    gap: 1rem 2rem;
+    column-gap: 2rem;
 }
 .footer-content a{
     align-self: center;
@@ -155,22 +147,27 @@ a {
 .footer-copyright{
     color: var(--matrix-green-color);
     text-align: center;
+    font-weight: bold;
 }
 
 
 @media only screen and (max-width: 768px) {
+    .main-structure{
+        padding: 1em;
+    }
+    .footer-copyright{
+        font-size: 12px;
+    }
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 6rem;
+        top: 5.5rem;
         flex-direction: column;
         background-color: black;
         width: 95vw;
         text-align: center;
         transition: 0.3s;
         border: 2px solid var(--matrix-green-color);
-        /* box-shadow:
-            0 10px 27px rgba(0, 0, 0, 0.05); */
     }
 
     .nav-menu.active {
@@ -183,16 +180,11 @@ a {
     }
     .nav-logo.active{
         z-index: 2;
-        background-color: black;
         transition: 0.3s;
     }
-    /* .nav-logo.active::before {
-        left: 0;
-        top: 0;
-        border-left: 2px solid var(--matrix-green-color);
-        border-top: 2px solid var(--matrix-green-color);
-        border-right: 2px solid var(--matrix-green-color);
-       } */
+    .nav-logo.active img{
+        filter: drop-shadow(0 1rem 2px black);
+    }
 
     .hamburger {
         display: block;

@@ -20,4 +20,4 @@ function closeMenu() {
     navMenu.classList.remove("active");
     navLogo.classList.remove("active");
 }
-copyRight.textContent = `Copyright © 2015-${currentYear} Iman Anooshehpour All Rights Reserved.`
+copyRight.textContent = `Copyright © 2015-${currentYear} | Iman Anooshehpour All Rights Reserved.`
