@@ -8,6 +8,7 @@ const currentYear = new Date().getFullYear()
 const projectsPageButton = document.querySelector('[data-projects]')
 const homePageButton = document.querySelector('[data-home]')
 const contentSection = document.querySelector('[data-content-section]')
+const hiInElevenLanguages = ["Hola", "Bonjour", "Durud", "Guten tag", "Salve", "nǐn hǎo", "olá", "asalaam alaikum", "konnichiwa", "anyoung haseyo", "Zdravstvuyte"]
 
 hamburger.addEventListener("click", mobileMenu);
 navLink.forEach(n => n.addEventListener("click", closeMenu));
@@ -62,8 +63,39 @@ projectsPageButton.addEventListener('click', async ()=>{
     })
 })
 
-function loadHome(){
-    contentSection.textContent = siteContent["home"]["text"]
+function createBanner(){
+    const animatedBanner = document.createElement('div')
+    animatedBanner.className = 'animated-banner'
+    const hiContainerSpan = document.createElement('span')
+    hiContainerSpan.className = "hi-languages"
+    animatedBanner.appendChild(hiContainerSpan)
+    let randomHi = hiInElevenLanguages[Math.floor(Math.random()*(hiInElevenLanguages.length-1))]
+    hiContainerSpan.textContent = randomHi + ','
+    setInterval(()=>{
+        randomHi = hiInElevenLanguages[Math.floor(Math.random()*(hiInElevenLanguages.length-1))]
+        hiContainerSpan.textContent = randomHi + ','
+    },1200)
+    contentSection.appendChild(animatedBanner)
 }
+
+
+function loadHome(){
+    createBanner();
+    for(eachElement of siteContent["home"]){
+        if (eachElement["type"]==="text"){
+            const contentText = document.createElement('div')
+            contentText.textContent = eachElement["data"]
+            contentSection.appendChild(contentText)
+        }
+        if(eachElement["type"]==="image"){
+            const contentImage = document.createElement('img')
+            contentImage.src = eachElement["data"]
+            contentSection.appendChild(contentImage)
+        }
+    }
+
+}
+
+setTimeout(loadHome,300)
 
 homePageButton.addEventListener('click', loadHome)

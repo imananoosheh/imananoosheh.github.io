@@ -45,6 +45,7 @@ canvas#matrix{
     height: 12.5%;
 }
 .content{
+    font-size: 1.25rem;
     height: 70%;
     color: var(--matrix-green-color);
     text-shadow: #212121;
@@ -53,6 +54,17 @@ canvas#matrix{
     text-align: center;
     scroll-behavior: smooth;
     scrollbar-color: var(--dark-background-color) var(--matrix-green-color);
+}
+.content img{
+    width: 35vw;
+}
+.animated-banner{
+    text-align: left;
+    margin-bottom: 1rem;
+}
+.animated-banner span{
+    font-weight: bold;
+    font-size: xx-large;
 }
 
 /* Hambergur Menu Section */
@@ -193,6 +205,9 @@ a {
     }
     .project{
         max-width: 75vw;
+    }
+    .content img{
+        width: 80vw;
     }
     .nav-menu {
         position: fixed;
