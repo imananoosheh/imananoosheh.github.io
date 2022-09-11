@@ -56,7 +56,7 @@ canvas#matrix{
     scrollbar-color: var(--dark-background-color) var(--matrix-green-color);
 }
 .content img{
-    width: 35vw;
+    width: min(50vw,500px);
 }
 .animated-banner{
     text-align: left;
@@ -206,9 +206,9 @@ a {
     .project{
         max-width: 75vw;
     }
-    .content img{
+    /* .content img{
         width: 80vw;
-    }
+    } */
     .nav-menu {
         position: fixed;
         left: -100%;

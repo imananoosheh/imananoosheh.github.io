@@ -1,3 +1,10 @@
+let siteContent = null
+async function fetchSiteContent(){
+    let siteContentResponse = await fetch('/js/content.json', {method: 'GET'});
+    siteContent = await siteContentResponse.json();
+}
+fetchSiteContent();
+
 // Hamberger Menu intractions
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
@@ -25,13 +32,6 @@ function closeMenu() {
     navLogo.classList.remove("active");
 }
 copyRight.textContent = `Copyright © 2015-${currentYear} | Iman Anooshehpour All Rights Reserved.`
-
-let siteContent = null
-async function fetchSiteContent(){
-    let siteContentResponse = await fetch('/js/content.json', {method: 'GET'});
-    siteContent = await siteContentResponse.json();
-}
-fetchSiteContent();
 
 function projectTemplating(address, demoVideoAddress, description){
     const project = document.createElement('div')
@@ -63,23 +63,36 @@ projectsPageButton.addEventListener('click', async ()=>{
     })
 })
 
+
 function createBanner(){
     const animatedBanner = document.createElement('div')
     animatedBanner.className = 'animated-banner'
-    const hiContainerSpan = document.createElement('span')
+    let hiContainerSpan = document.createElement('span')
     hiContainerSpan.className = "hi-languages"
     animatedBanner.appendChild(hiContainerSpan)
-    let randomHi = hiInElevenLanguages[Math.floor(Math.random()*(hiInElevenLanguages.length-1))]
-    hiContainerSpan.textContent = randomHi + ','
-    setInterval(()=>{
-        randomHi = hiInElevenLanguages[Math.floor(Math.random()*(hiInElevenLanguages.length-1))]
-        hiContainerSpan.textContent = randomHi + ','
-    },1200)
     contentSection.appendChild(animatedBanner)
+    let randomHi = hiInElevenLanguages[Math.floor(Math.random()*(hiInElevenLanguages.length-1))].toLocaleUpperCase()
+
+    function appendChar(index){
+        if(index < randomHi.length){
+            hiContainerSpan.textContent += randomHi[index]
+            setTimeout(()=> appendChar(index+1), 500)
+        }else{
+            // hiContainerSpan.textContent = ''
+            randomHi = hiInElevenLanguages[Math.floor(Math.random()*(hiInElevenLanguages.length-1))].toLocaleUpperCase()
+            index = 0
+            setTimeout(()=> {
+                hiContainerSpan.textContent = ''
+                appendChar(index)
+            }, 2000)
+        }
+    }
+    setTimeout(()=> appendChar(0), 100)
 }
 
 
 function loadHome(){
+    contentSection.innerHTML = null
     createBanner();
     for(eachElement of siteContent["home"]){
         if (eachElement["type"]==="text"){
