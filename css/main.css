@@ -217,6 +217,14 @@ span.hi-languages::after{
     }
 }
 
+/* 404 page styles */
+.text-404{
+    font-size: 30vw;
+}
+.sub-text-404{
+    font-size: 5vw;
+}
+
 @media only screen and (max-width: 768px) {
     .main-structure{
         padding: 1em;

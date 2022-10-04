@@ -5,6 +5,11 @@ async function fetchSiteContent(){
 }
 fetchSiteContent();
 
+//Checking if URL redirected from 404 page
+const url = new URL(window.location.href);
+const params = new URLSearchParams(url.search);
+
+
 // Hamberger Menu intractions
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
@@ -108,7 +113,23 @@ function loadHome(){
     }
 
 }
+function load404(){
+    contentSection.innerHTML = null
+    const container404 = document.createElement('div')
+    container404.textContent = '404'
+    container404.className = 'text-404'
+    contentSection.appendChild(container404)
+    const subTitle404 = document.createElement('div')
+    subTitle404.textContent = 'This page is not found.'
+    subTitle404.className = 'sub-text-404'
+    contentSection.appendChild(subTitle404)
+}
 
-setTimeout(loadHome,300)
+
+if (params.get('data') === '404'){
+    setTimeout(load404,300)
+}else{
+    setTimeout(loadHome,300)
+}
 
 homePageButton.addEventListener('click', loadHome)
