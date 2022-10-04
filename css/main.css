@@ -219,10 +219,10 @@ span.hi-languages::after{
 
 /* 404 page styles */
 .text-404{
-    font-size: 30vw;
+    font-size: 25vw;
 }
 .sub-text-404{
-    font-size: 5vw;
+    font-size: 3.5vw;
 }
 
 @media only screen and (max-width: 768px) {
