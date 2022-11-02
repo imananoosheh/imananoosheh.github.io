@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 //Checking if URL redirected from 404 page
 const url = new URL(window.location.href);
 const params = new URLSearchParams(url.search);
@@ -20,12 +20,13 @@ const homePageButton = document.querySelector("[data-home]");
 
 const contentSection = document.querySelector("[data-content-section]");
 const hiInElevenLanguages = [
+    "Dorud",
+    "Hello",
     "Hola",
     "Bonjour",
-    "Durud",
+    "nǐn hǎo",
     "Guten tag",
     "Salve",
-    "nǐn hǎo",
     "olá",
     "asalaam alaikum",
     "konnichiwa",
@@ -110,21 +111,17 @@ function createBanner() {
     hiContainerSpan.className = "hi-languages";
     animatedBanner.appendChild(hiContainerSpan);
     contentSection.appendChild(animatedBanner);
-    let randomHi =
-        hiInElevenLanguages[
-            Math.floor(Math.random() * (hiInElevenLanguages.length - 1))
-        ].toLocaleUpperCase();
+    let nthHi = 0;
+    let currentHi = hiInElevenLanguages[nthHi].toLocaleUpperCase();
 
     function appendChar(index) {
-        if (index < randomHi.length) {
-            hiContainerSpan.textContent += randomHi[index];
+        if (index < currentHi.length) {
+            hiContainerSpan.textContent += currentHi[index];
             setTimeout(() => appendChar(index + 1), 500);
         } else {
             // hiContainerSpan.textContent = ''
-            randomHi =
-                hiInElevenLanguages[
-                    Math.floor(Math.random() * (hiInElevenLanguages.length - 1))
-                ].toLocaleUpperCase();
+            if (nthHi === hiInElevenLanguages.length) nthHi = 0;
+            currentHi = hiInElevenLanguages[nthHi++].toLocaleUpperCase();
             index = 0;
             setTimeout(() => {
                 hiContainerSpan.textContent = "";
