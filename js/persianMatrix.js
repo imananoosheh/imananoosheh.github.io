@@ -54,7 +54,7 @@ function draw()
 }
 
 function canvasResize(){
-	console.log(window.innerHeight, window.innerWidth)
+	console.info(`Screen ration changed; height:${window.innerHeight}, width:${window.innerWidth}`)
 	canvas.height = window.innerHeight;
 	canvas.width = window.innerWidth;
 	columns = canvas.width/font_size;
