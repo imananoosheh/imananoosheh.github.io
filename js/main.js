@@ -34,6 +34,7 @@ const hiInElevenLanguages = [
     "Zdravstvuyte",
 ];
 
+
 //  Setup function retrieve data and populates
 async function setup() {
     //  Fetching data from JSON file
@@ -43,14 +44,21 @@ async function setup() {
     const siteContent = await siteContentResponse.json();
 
     if (params.get("data") === "404") {
-        setTimeout(load404, 300);
+        // setTimeout(load404, 300);
+        load404();
     } else {
-        setTimeout(loadHome(siteContent), 300);
+        // setTimeout(loadHome(siteContent), 300);
+        loadHome(siteContent);
     }
-
+    
     // Buttons functionality
-    projectsPageButton.addEventListener("click", loadProject(siteContent));
-    homePageButton.addEventListener("click", loadHome(siteContent));
+    projectsPageButton.addEventListener("click", () => {
+        loadProject(siteContent);
+    });
+    // console.log(projectsPageButton,siteContent)
+    homePageButton.addEventListener("click", () => {
+        loadHome(siteContent);
+    });
 }
 setup();
 
