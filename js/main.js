@@ -77,14 +77,20 @@ function closeMenu() {
     navLogo.classList.remove("active");
 }
 
-function projectTemplating(address, demoVideoAddress, description) {
+function projectTemplating(address, mediaSource, description, mediaType='video') {
     const project = document.createElement("div");
     project.classList.add("project");
-    const projectVideo = document.createElement("video");
-    projectVideo.src = demoVideoAddress;
-    projectVideo.autoplay = true;
-    projectVideo.loop = true;
-    project.appendChild(projectVideo);
+    if (mediaType==='video'){
+        const projectVideo = document.createElement("video");
+        projectVideo.src = mediaSource;
+        projectVideo.autoplay = true;
+        projectVideo.loop = true;
+        project.appendChild(projectVideo);
+    } else if(mediaType==='img'){
+        const projectImage = document.createElement('img')
+        projectImage.src = mediaSource
+        project.appendChild(projectImage)
+    }
     const projectDescription = document.createElement("p");
     projectDescription.textContent = description;
     project.appendChild(projectDescription);
@@ -105,8 +111,9 @@ function loadProject(siteContent) {
         projectsWrapper.appendChild(
             projectTemplating(
                 project["address"],
-                project["demo-video"],
-                project["description"]
+                project["media-source"],
+                project["description"],
+                project["media-type"]
             )
         );
     });
