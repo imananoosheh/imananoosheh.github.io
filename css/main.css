@@ -179,6 +179,12 @@ a {
     align-self: center;
     width: 100%;
 }
+
+.project img{
+    max-width: 500px;
+    max-height: 500px;
+    align-self: center;
+}
 .project a {
     border: 2px solid var(--matrix-green-color);
     border-radius: 2px;
