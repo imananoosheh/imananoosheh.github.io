@@ -183,6 +183,7 @@ a {
 .project img{
     max-width: 500px;
     max-height: 500px;
+    object-fit: contain;
     align-self: center;
 }
 .project a {
