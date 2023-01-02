@@ -18,10 +18,10 @@
     ],
     "projects": [
         {
-            "address": "proj/proj01/landing.html",
-            "media-source": "proj/proj01/proj01-screenrecord.mp4",
-            "description": "Cyber logo for landing page. cyber-punk themed typography.",
-            "media-type": "video"
+            "address": "https://anoosheh.info/conways-game-of-life-typescript-react/",
+            "media-source": "proj/conways-game-of-life/demo-screenrecord.gif",
+            "description": "A playground to play Conway's Game Of Life. Developed using React and TypeScript.",
+            "media-type": "img"
         },
         {
             "address": "proj/Ulams_Spiral_VanillaJS/index.html",
@@ -34,6 +34,12 @@
             "media-source": "proj/proj01/proj01-screenrecord.mp4",
             "description": "Cyber logo for landing page. cyber-punk themed typography.",
             "media-type": "video"
+        },
+        {
+            "address": "https://anoosheh.info/tagBased-selectComponent-react-ts/",
+            "media-source": "proj/Tag_Based_Select_Component/demo-screenrecord.gif",
+            "description": "Single and multiple component selection with keyboard events functionality. Developed with React TypeScript and Built with Vite",
+            "media-type": "img"
         }
     ]
 }
