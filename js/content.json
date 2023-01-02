@@ -24,6 +24,12 @@
             "media-type": "img"
         },
         {
+            "address": "proj/wordle-replica-project/index.html",
+            "media-source": "proj/conways-game-of-life/demo-screenrecord.gif",
+            "description": "Recreation of famous Wordle app now own by nytimes.",
+            "media-type": "img"
+        },
+        {
             "address": "proj/Ulams_Spiral_VanillaJS/index.html",
             "media-source": "proj/Ulams_Spiral_VanillaJS/canvas_screenshot_2.png",
             "description": "The Ulam spiral or prime spiral is a graphical depiction of the set of prime numbers which is rendered using Canvas HTML Element using VanillaJS",

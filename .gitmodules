@@ -1,3 +1,6 @@
 [submodule "proj/Ulams_Spiral_VanillaJS"]
 	path = proj/Ulams_Spiral_VanillaJS
 	url = https://github.com/imananoosheh/Ulams_Spiral_VanillaJS.git
+[submodule "proj/wordle-replica-project"]
+	path = proj/wordle-replica-project
+	url = https://github.com/imananoosheh/wordle-replica-project
