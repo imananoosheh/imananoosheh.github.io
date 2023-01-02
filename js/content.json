@@ -25,7 +25,7 @@
         },
         {
             "address": "proj/wordle-replica-project/index.html",
-            "media-source": "proj/conways-game-of-life/demo-screenrecord.gif",
+            "media-source": "proj/wordle-replica-project/demo-screenrecord.gif",
             "description": "Recreation of famous Wordle app now own by nytimes.",
             "media-type": "img"
         },
