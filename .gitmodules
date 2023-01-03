@@ -4,3 +4,6 @@
 [submodule "proj/wordle-replica-project"]
 	path = proj/wordle-replica-project
 	url = https://github.com/imananoosheh/wordle-replica-project
+[submodule "proj/Tic-Tac-Toe_VanillaJS"]
+	path = proj/Tic-Tac-Toe_VanillaJS
+	url = https://github.com/imananoosheh/Tic-Tac-Toe_VanillaJS
