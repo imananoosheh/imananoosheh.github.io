@@ -155,11 +155,20 @@ function loadHome(siteContent) {
             const contentText = document.createElement("div");
             contentText.textContent = eachElement["data"];
             contentSection.appendChild(contentText);
-        }
-        if (eachElement["type"] === "image") {
+        }else if (eachElement["type"] === "image") {
             const contentImage = document.createElement("img");
             contentImage.src = eachElement["data"];
             contentSection.appendChild(contentImage);
+        }else if (eachElement["type"] === "link"){
+            const contentContainer = document.createElement("div")
+            const description = document.createElement("p")
+            description.textContent = eachElement["p-data"]
+            contentContainer.appendChild(description)
+            const button = document.createElement('a')
+            button.href = eachElement['a-url']
+            button.textContent = eachElement['a-data']
+            contentContainer.appendChild(button)
+            contentSection.appendChild(contentContainer)
         }
     }
 }

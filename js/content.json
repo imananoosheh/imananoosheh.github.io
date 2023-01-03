@@ -12,8 +12,10 @@
         },
         {
             "id": "3",
-            "type": "text",
-            "data": "For any inqury please contact me by imananoosheh@protonmail.com"
+            "type": "link",
+            "p-data": "For any inquiry please contact me via ",
+            "a-url": "mailto:imananoosheh@protonmail.com",
+            "a-data": "imananoosheh[AT]]protonmail[DOT]com"
         }
     ],
     "projects": [
@@ -44,7 +46,7 @@
         {
             "address":"proj/Tic-Tac-Toe_VanillaJS/index.html",
             "media-source":"proj/Tic-Tac-Toe_VanillaJS/demo-screenrecord.gif",
-            "description":"The Tick Tac Toe game with the optino of random play. Developed using VanillaJS",
+            "description":"The Tick Tac Toe game with the option of random play. Developed using VanillaJS",
             "media-type":"img"
         },
         {

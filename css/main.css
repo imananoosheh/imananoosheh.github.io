@@ -56,7 +56,14 @@ canvas#matrix {
     scrollbar-color: var(--dark-background-color) var(--matrix-green-color);
 }
 .content img {
-    width: min(50vw, 500px);
+    width: min(50vw, 400px);
+}
+.content a{
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--matrix-green-color);
+    background: transparent;
+    border: 2px solid var(--matrix-green-color);
 }
 .animated-banner {
     text-align: center;
