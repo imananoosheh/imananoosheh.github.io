@@ -3,19 +3,24 @@
         {
             "id": "1",
             "type": "text",
-            "data": "I'm Iman and my name means faith which is what i always had in myself and what I'm passionate about!"
+            "data": "Hi There! My name is Iman! (/i:man/) It means faith which i always had in myself and I'm prone to have in others as well! I love User Interface and User Experience as much as I love Software Engineering, specifically Full-stack Engineering."
         },
         {
             "id": "2",
+            "type": "text",
+            "data": "Let me know your software needs/ideas/problems; I'll take care of both Front-end and Back-end."
+        },
+        {
+            "id": "3",
             "type": "image",
             "data": "img/logo/v3-pipboy-version-500X500.png"
         },
         {
-            "id": "3",
+            "id": "4",
             "type": "link",
             "p-data": "For any inquiry please contact me via ",
             "a-url": "mailto:imananoosheh@protonmail.com",
-            "a-data": "imananoosheh[AT]]protonmail[DOT]com"
+            "a-data": "imananoosheh[AT]protonmail[DOT]com"
         }
     ],
     "projects": [

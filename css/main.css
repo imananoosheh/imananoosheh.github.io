@@ -241,6 +241,9 @@ span.hi-languages::after {
     .footer-copyright {
         font-size: 12px;
     }
+    .content a{
+        font-size: .9rem;
+    }
     .project {
         max-width: 75vw;
     }
