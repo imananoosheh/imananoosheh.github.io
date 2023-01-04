@@ -78,7 +78,7 @@ canvas#matrix {
     scrollbar-color: var(--dark-background-color) var(--matrix-green-color);
 }
 .projects img {
-    width: min(60vw, 50vw);
+    width: min(35vw, 65vw);
 }
 .projects a{
     font-size: 1.2rem;
@@ -210,8 +210,8 @@ a {
 }
 
 .project img{
-    max-width: 500px;
-    max-height: 500px;
+    /* max-width: 500px;
+    max-height: 500px; */
     object-fit: contain;
     align-self: center;
 }
