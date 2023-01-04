@@ -48,7 +48,6 @@ canvas#matrix {
     font-size: 1.25rem;
     height: 70%;
     color: var(--matrix-green-color);
-    text-shadow: #212121;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -62,6 +61,26 @@ canvas#matrix {
     width: min(50vw, 20vw);
 }
 .content a{
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--matrix-green-color);
+    background: transparent;
+    border: 2px solid var(--matrix-green-color);
+}
+.projects {
+    font-size: 1.25rem;
+    height: 70%;
+    color: var(--matrix-green-color);
+    overflow-y: auto;
+    padding: 1rem 4rem;
+    text-align: center;
+    scroll-behavior: smooth;
+    scrollbar-color: var(--dark-background-color) var(--matrix-green-color);
+}
+.projects img {
+    width: min(60vw, 50vw);
+}
+.projects a{
     font-size: 1.2rem;
     font-weight: 400;
     color: var(--matrix-green-color);
@@ -249,6 +268,13 @@ span.hi-languages::after {
         padding: 0.5rem;
     }
     .content a{
+        font-size: .9rem;
+    }
+    .projects{
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+    .projects a{
         font-size: .9rem;
     }
     .project {

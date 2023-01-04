@@ -104,6 +104,7 @@ function projectTemplating(address, mediaSource, description, mediaType='video')
 
 function loadProject(siteContent) {
     contentSection.textContent = "";
+    contentSection.classList = 'item projects'
     const projectsWrapper = document.createElement("div");
     projectsWrapper.classList.add("project-wrapper");
     contentSection.appendChild(projectsWrapper);
@@ -149,6 +150,7 @@ function createBanner() {
 
 function loadHome(siteContent) {
     contentSection.innerHTML = null;
+    contentSection.classList = 'item content'
     createBanner();
     for (let eachElement of siteContent["home"]) {
         if (eachElement["type"] === "text") {
