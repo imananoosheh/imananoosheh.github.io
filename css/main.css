@@ -58,6 +58,9 @@ canvas#matrix {
     scrollbar-color: var(--dark-background-color) var(--matrix-green-color);
     overflow-y: auto;
 }
+.content div{
+    width: 100%;
+}
 .content img {
     width: min(20vw, 15vh);
 }
@@ -269,7 +272,7 @@ span.hi-languages::after {
         padding: 0.5rem;
     }
     .content a{
-        font-size: .9rem;
+        font-size: .8rem;
     }
     .projects{
         font-size: 1rem;
