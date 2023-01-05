@@ -56,9 +56,10 @@ canvas#matrix {
     text-align: center;
     scroll-behavior: smooth;
     scrollbar-color: var(--dark-background-color) var(--matrix-green-color);
+    overflow-y: auto;
 }
 .content img {
-    width: min(50vw, 20vw);
+    width: min(20vw, 15vh);
 }
 .content a{
     font-size: 1.2rem;
