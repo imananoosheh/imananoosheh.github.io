@@ -83,7 +83,9 @@ function projectTemplating(address, mediaSource, description, mediaType='video')
     if (mediaType==='video'){
         const projectVideo = document.createElement("video");
         projectVideo.src = mediaSource;
+        projectVideo.playsInline = true;
         projectVideo.loop = true;
+        projectVideo.play();
         project.appendChild(projectVideo);
     } else if(mediaType==='img'){
         const projectImage = document.createElement('img')
