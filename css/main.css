@@ -192,6 +192,10 @@ a {
     text-align: center;
     font-weight: bold;
 }
+#leetcode-img{
+    box-shadow: inset 0 0 .5em .1em var(--matrix-green-color);
+    background: url("../img/pttrn/PatternTextBack.png") repeat center center;
+}
 
 .project-wrapper {
     padding: 2rem 0rem;
