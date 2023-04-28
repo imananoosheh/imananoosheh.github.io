@@ -88,9 +88,13 @@ function projectTemplating(address, mediaSource, description, mediaType='video')
         projectVideo.play();
         project.appendChild(projectVideo);
     } else if(mediaType==='img'){
+        const projectImgObject = document.createElement('object')
+        projectImgObject.data = mediaSource
+        projectImgObject.type = 'image/png'
         const projectImage = document.createElement('img')
-        projectImage.src = mediaSource
-        project.appendChild(projectImage)
+        projectImage.src = '../img/img-not-loaded.png'
+        projectImgObject.appendChild(projectImage)
+        project.appendChild(projectImgObject)
     }
     const projectDescription = document.createElement("p");
     projectDescription.textContent = description;

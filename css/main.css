@@ -71,8 +71,8 @@ canvas#matrix {
     background: transparent;
     border: 2px solid var(--matrix-green-color);
 }
-.projects {
-    font-size: 1.25rem;
+ .projects {
+    font-size: 1rem;
     height: 70%;
     color: var(--matrix-green-color);
     overflow-y: auto;
@@ -81,16 +81,17 @@ canvas#matrix {
     scroll-behavior: smooth;
     scrollbar-color: var(--dark-background-color) var(--matrix-green-color);
 }
+/*
 .projects img {
     width: min(35vw, 65vw);
 }
 .projects a{
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 400;
     color: var(--matrix-green-color);
     background: transparent;
     border: 2px solid var(--matrix-green-color);
-}
+} */
 .animated-banner {
     text-align: center;
     margin-bottom: 1rem;
@@ -198,34 +199,32 @@ a {
 }
 
 .project-wrapper {
-    padding: 2rem 0rem;
+    padding: 1rem 0rem;
     display: flex;
     flex-flow: row wrap;
-    gap: 2rem 2rem;
-    justify-content: space-around;
-    height: 100%;
+    gap: 1rem 2rem;
+    justify-content: center;
 }
 .project {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     text-align: center;
-    max-width: 40vw;
-    height: 100%;
     row-gap: 1rem;
+    height:33rem;
+    max-width: 40rem;
+    color: var(--matrix-green-color);
 }
-.project video {
-    align-self: center;
-    width: 80%;
+.project p{
+    padding: 0rem 1rem;
 }
 
-.project img{
-    /* max-width: 500px;
-    max-height: 500px; */
+
+.project img,.project video, .project object{
+    /* width: 24rem; */
+    max-height: 23rem;
     object-fit: contain;
     align-self: center;
-    height: 100%;
-    width: 80vw;
 }
 .project a {
     border: 2px solid var(--matrix-green-color);
@@ -286,12 +285,22 @@ span.hi-languages::after {
         font-size: 1rem;
         padding: 0.5rem;
     }
+    .project img , .project object,.project video{
+        max-height: 15rem;
+    }
+    .project-wrapper{
+        gap: 3rem 1rem;
+    }
+    .project{
+        height:25rem;
+    }
+    /*
     .projects a{
         font-size: .9rem;
     }
     .project {
         max-width: 75vw;
-    }
+    } */
     .nav-menu {
         position: fixed;
         left: -100%;
