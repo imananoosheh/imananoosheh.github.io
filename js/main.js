@@ -111,7 +111,7 @@ function loadProject(siteContent) {
     contentSection.textContent = "";
     contentSection.classList = 'item projects'
     const projectsWrapper = document.createElement("div");
-    projectsWrapper.classList.add("project-wrapper");
+    projectsWrapper.classList.add("project-wrapper", 'w-100');
     contentSection.appendChild(projectsWrapper);
     siteContent["projects"].forEach((project) => {
         projectsWrapper.appendChild(
@@ -127,7 +127,7 @@ function loadProject(siteContent) {
 
 function createBanner() {
     const animatedBanner = document.createElement("div");
-    animatedBanner.className = "animated-banner";
+    animatedBanner.className = "animated-banner w-100";
     let hiContainerSpan = document.createElement("span");
     hiContainerSpan.className = "hi-languages";
     animatedBanner.appendChild(hiContainerSpan);
@@ -160,6 +160,7 @@ function loadHome(siteContent) {
     for (let eachElement of siteContent["home"]) {
         if (eachElement["type"] === "text") {
             const contentText = document.createElement("div");
+            contentText.className = 'w-100'
             contentText.textContent = eachElement["data"];
             contentSection.appendChild(contentText);
         }else if (eachElement["type"] === "image") {
@@ -168,6 +169,7 @@ function loadHome(siteContent) {
             contentSection.appendChild(contentImage);
         }else if (eachElement["type"] === "link"){
             const contentContainer = document.createElement("div")
+            contentContainer.className = 'w-100'
             const description = document.createElement("p")
             description.textContent = eachElement["p-data"]
             contentContainer.appendChild(description)
@@ -178,15 +180,31 @@ function loadHome(siteContent) {
             contentSection.appendChild(contentContainer)
         }
     }
+
+    /*  GitHub Calendar
+    *   Forked from: https://github.com/Bloggify/github-calendar
+    *   CSS is modified in main.css:270
+    */
+    const githubCalendarContainer = document.createElement('div')
+    githubCalendarContainer.className = 'calendar-container'
+    const githubCalendar = document.createElement('div')
+    githubCalendar.className = 'calendar'
+    const githubCalendarHeader = document.createElement('h2')
+    githubCalendarHeader.textContent = 'GitHub Contributions'
+    githubCalendarContainer.appendChild(githubCalendarHeader)
+    githubCalendarContainer.appendChild(githubCalendar)
+    contentSection.appendChild(githubCalendarContainer)
+    GitHubCalendar(".calendar", "imananoosheh", { responsive: true });
+
 }
 function load404() {
     contentSection.innerHTML = null;
     const container404 = document.createElement("div");
     container404.textContent = "404";
-    container404.className = "text-404";
+    container404.className = "text-404 w-100";
     contentSection.appendChild(container404);
     const subTitle404 = document.createElement("div");
     subTitle404.textContent = "This page is not found.";
-    subTitle404.className = "sub-text-404";
+    subTitle404.className = "sub-text-404 w-100";
     contentSection.appendChild(subTitle404);
 }

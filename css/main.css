@@ -58,7 +58,7 @@ canvas#matrix {
     scrollbar-color: var(--dark-background-color) var(--matrix-green-color);
     overflow-y: auto;
 }
-.content div{
+.content div.w-100{
     width: 100%;
 }
 .content img {
@@ -266,6 +266,29 @@ span.hi-languages::after {
 .sub-text-404 {
     font-size: 3.5vw;
 }
+
+/* GitHub Calendar styles */
+.calendar-container{
+    min-width: 60vw;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+}
+.calendar{
+    border: 1px solid var(--matrix-green-color) !important;
+}
+.calendar .position-relative{
+    padding: 1rem;
+}
+.calendar .contrib-number{
+    color: var(--matrix-green-color)
+}
+.calendar .contrib-column{
+    border: 1px solid var(--matrix-green-color);
+}
+.calendar text{
+    fill: var(--matrix-green-color) !important;
+}
+
 
 @media only screen and (max-width: 768px) {
     .main-structure {
