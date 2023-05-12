@@ -34,33 +34,7 @@ const hiInElevenLanguages = [
     "Zdravstvuyte",
 ];
 
-
-//  Setup function retrieve data and populates
-async function setup() {
-    //  Fetching data from JSON file
-    let siteContentResponse = await fetch("/js/content.json", {
-        method: "GET",
-    });
-    const siteContent = await siteContentResponse.json();
-
-    if (params.get("data") === "404") {
-        // setTimeout(load404, 300);
-        load404();
-    } else {
-        // setTimeout(loadHome(siteContent), 300);
-        loadHome(siteContent);
-    }
-    
-    // Buttons functionality
-    projectsPageButton.addEventListener("click", () => {
-        loadProject(siteContent);
-    });
-    // console.log(projectsPageButton,siteContent)
-    homePageButton.addEventListener("click", () => {
-        loadHome(siteContent);
-    });
-}
-setup();
+const consoleWatermark = "\nWelcome to\n░█████╗░███╗░░██╗░█████╗░░█████╗░░██████╗██╗░░██╗███████╗██╗░░██╗░░░██╗███╗░░██╗███████╗░█████╗░\n██╔══██╗████╗░██║██╔══██╗██╔══██╗██╔════╝██║░░██║██╔════╝██║░░██║░░░██║████╗░██║██╔════╝██╔══██╗\n███████║██╔██╗██║██║░░██║██║░░██║╚█████╗░███████║█████╗░░███████║░░░██║██╔██╗██║█████╗░░██║░░██║\n██╔══██║██║╚████║██║░░██║██║░░██║░╚═══██╗██╔══██║██╔══╝░░██╔══██║░░░██║██║╚████║██╔══╝░░██║░░██║\n██║░░██║██║░╚███║╚█████╔╝╚█████╔╝██████╔╝██║░░██║███████╗██║░░██║██╗██║██║░╚███║██║░░░░░╚█████╔╝\n╚═╝░░╚═╝╚═╝░░╚══╝░╚════╝░░╚════╝░╚═════╝░╚═╝░░╚═╝╚══════╝╚═╝░░╚═╝╚═╝╚═╝╚═╝░░╚══╝╚═╝░░░░░░╚════╝░\n\n"
 
 hamburger.addEventListener("click", mobileMenu);
 navLink.forEach((n) => n.addEventListener("click", closeMenu));
@@ -120,21 +94,21 @@ function loadProject(siteContent) {
                 project["media-source"],
                 project["description"],
                 project["media-type"]
-            )
-        );
-    });
-}
-
-function createBanner() {
-    const animatedBanner = document.createElement("div");
-    animatedBanner.className = "animated-banner w-100";
-    let hiContainerSpan = document.createElement("span");
-    hiContainerSpan.className = "hi-languages";
+                )
+                );
+            });
+        }
+        
+        function createBanner() {
+            const animatedBanner = document.createElement("div");
+            animatedBanner.className = "animated-banner w-100";
+            let hiContainerSpan = document.createElement("span");
+            hiContainerSpan.className = "hi-languages";
     animatedBanner.appendChild(hiContainerSpan);
     contentSection.appendChild(animatedBanner);
     let nthHi = 0;
     let currentHi = hiInElevenLanguages[nthHi].toLocaleUpperCase();
-
+    
     function appendChar(index) {
         if (index < currentHi.length) {
             hiContainerSpan.textContent += currentHi[index];
@@ -180,7 +154,7 @@ function loadHome(siteContent) {
             contentSection.appendChild(contentContainer)
         }
     }
-
+    
     /*  GitHub Calendar
     *   Forked from: https://github.com/Bloggify/github-calendar
     *   CSS is modified in main.css:270
@@ -195,7 +169,7 @@ function loadHome(siteContent) {
     githubCalendarContainer.appendChild(githubCalendar)
     contentSection.appendChild(githubCalendarContainer)
     GitHubCalendar(".calendar", "imananoosheh", { responsive: true });
-
+    
 }
 function load404() {
     contentSection.innerHTML = null;
@@ -208,3 +182,32 @@ function load404() {
     subTitle404.className = "sub-text-404 w-100";
     contentSection.appendChild(subTitle404);
 }
+
+//  Setup function retrieve data and populates
+async function setup() {
+    //  Fetching data from JSON file
+    let siteContentResponse = await fetch("/js/content.json", {
+        method: "GET",
+    });
+    const siteContent = await siteContentResponse.json();
+
+    if (params.get("data") === "404") {
+        // setTimeout(load404, 300);
+        load404();
+    } else {
+        // setTimeout(loadHome(siteContent), 300);
+        loadHome(siteContent);
+    }
+    
+    // Buttons functionality
+    projectsPageButton.addEventListener("click", () => {
+        loadProject(siteContent);
+    });
+    // console.log(projectsPageButton,siteContent)
+    homePageButton.addEventListener("click", () => {
+        loadHome(siteContent);
+    });
+
+    console.log(consoleWatermark)
+}
+setup();
