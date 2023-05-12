@@ -208,6 +208,6 @@ async function setup() {
         loadHome(siteContent);
     });
 
-    console.log(consoleWatermark)
+    console.log(`%c${consoleWatermark}`,"color:#0f0") 
 }
 setup();
