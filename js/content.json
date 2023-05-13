@@ -26,42 +26,49 @@
     "projects": [
         {
             "address": "https://anoosheh.info/conways-game-of-life-typescript-react/",
+            "gh-repo-address": "https://github.com/imananoosheh/conways-game-of-life-typescript-react",
             "media-source": "proj/conways-game-of-life/demo-screenrecord.gif",
             "description": "A playground to play Conway's Game Of Life. Developed using React and TypeScript.",
             "media-type": "img"
         },
         {
             "address": "proj/wordle-replica-project/index.html",
+            "gh-repo-address": "https://github.com/imananoosheh/wordle-replica-project",
             "media-source": "proj/wordle-replica-project/demo-screenrecord.gif",
             "description": "Recreation of famous Wordle app now own by nytimes.",
             "media-type": "img"
         },
         {
             "address": "proj/Ulams_Spiral_VanillaJS/index.html",
+            "gh-repo-address": "https://github.com/imananoosheh/Ulams_Spiral_VanillaJS",
             "media-source": "proj/Ulams_Spiral_VanillaJS/canvas_screenshot_2.png",
             "description": "The Ulam spiral or prime spiral is a graphical depiction of the set of prime numbers which is rendered using Canvas HTML Element using VanillaJS",
             "media-type": "img"
         },
         {
             "address": "https://anoosheh.info/TODO-TypeScript-APP/",
+            "gh-repo-address": "https://github.com/imananoosheh/TODO-TypeScript-APP",
             "media-source": "proj/TODO-TypeScript-APP/demo-screenrecord.gif",
             "description": "Styled responsive ToDo app developed using TypeScript",
             "media-type": "img"
         },
         {
             "address":"proj/Tic-Tac-Toe_VanillaJS/index.html",
+            "gh-repo-address": "https://github.com/imananoosheh/Tic-Tac-Toe_VanillaJS",
             "media-source":"proj/Tic-Tac-Toe_VanillaJS/demo-screenrecord.gif",
             "description":"The Tick Tac Toe game with the option of random play. Developed using VanillaJS",
             "media-type":"img"
         },
         {
             "address": "proj/proj01/landing.html",
+            "gh-repo-address": "https://github.com/imananoosheh/imananoosheh.github.io/tree/master/proj/proj01",
             "media-source": "proj/proj01/proj01-screenrecord.mp4",
             "description": "Cyber logo for landing page. cyber-punk themed typography.",
             "media-type": "video"
         },
         {
             "address": "https://anoosheh.info/tagBased-selectComponent-react-ts/",
+            "gh-repo-address": "https://github.com/imananoosheh/tagBased-selectComponent-react-ts",
             "media-source": "proj/Tag_Based_Select_Component/demo-screenrecord.gif",
             "description": "Single and multiple component selection with keyboard events functionality. Developed with React TypeScript and Built with Vite",
             "media-type": "img"
