@@ -130,7 +130,8 @@ function createBanner() {
       setTimeout(() => appendChar(index + 1), 350);
     } else {
       if (nthHi === hiInElevenLanguages.length) nthHi = 0;
-      currentHi = hiInElevenLanguages[++nthHi].toLocaleUpperCase();
+      nthHi++
+      currentHi = hiInElevenLanguages[nthHi].toLocaleUpperCase();
       index = 0;
       setTimeout(() => {
         hiContainerSpan.textContent = "";
