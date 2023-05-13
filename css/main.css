@@ -234,6 +234,7 @@ a {
     padding: 00.5rem;
     text-decoration: none;
     color: var(--matrix-green-color);
+    margin-left: 0.25rem;
 }
 .project a:hover {
     background-color: var(--matrix-green-color);

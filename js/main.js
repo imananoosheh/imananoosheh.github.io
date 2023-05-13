@@ -54,6 +54,7 @@ function closeMenu() {
 
 function projectTemplating(
   address,
+  ghRepoAddress,
   mediaSource,
   description,
   mediaType = "video"
@@ -79,11 +80,18 @@ function projectTemplating(
   const projectDescription = document.createElement("p");
   projectDescription.textContent = description;
   project.appendChild(projectDescription);
-  const projectButton = document.createElement("a");
-  projectButton.href = address;
-  projectButton.target = "_blank";
-  projectButton.textContent = "Take Me There! ->";
-  project.appendChild(projectButton);
+  const buttonsContainer = document.createElement('div')
+  const pDemoButton = document.createElement("a");
+  pDemoButton.href = address;
+  pDemoButton.target = "_blank";
+  pDemoButton.textContent = "Demo Page ->";
+  buttonsContainer.appendChild(pDemoButton);
+  const pGithubButton = document.createElement("a");
+  pGithubButton.href = ghRepoAddress;
+  pGithubButton.target = "_blank";
+  pGithubButton.textContent = "Github Repo ->";
+  buttonsContainer.appendChild(pGithubButton);
+  project.appendChild(buttonsContainer)
   return project;
 }
 
@@ -97,6 +105,7 @@ function loadProject(siteContent) {
     projectsWrapper.appendChild(
       projectTemplating(
         project["address"],
+        project["gh-repo-address"],
         project["media-source"],
         project["description"],
         project["media-type"]
