@@ -131,7 +131,7 @@ function createBanner() {
     } else {
       if (nthHi === hiInElevenLanguages.length) nthHi = 0;
       nthHi++
-      currentHi = hiInElevenLanguages[nthHi].toLocaleUpperCase();
+      currentHi = hiInElevenLanguages[nthHi]?.toLocaleUpperCase();
       index = 0;
       setTimeout(() => {
         hiContainerSpan.textContent = "";
