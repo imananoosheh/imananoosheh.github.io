@@ -344,6 +344,9 @@ span.hi-languages::after {
     font-size: 1rem;
     padding: 0.5rem;
   }
+  .project{
+    height: 30rem;
+  }
   .project img,
   .project object,
   .project video {
@@ -351,9 +354,6 @@ span.hi-languages::after {
   }
   .project-wrapper {
     gap: 3rem 1rem;
-  }
-  .project {
-    height: 25rem;
   }
   .nav-menu {
     position: fixed;
