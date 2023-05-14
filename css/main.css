@@ -80,6 +80,7 @@ canvas#matrix {
   padding: 1rem 4rem;
   text-align: center;
   scroll-behavior: smooth;
+  scrollbar-width: auto;
   scrollbar-color: var(--dark-background-color) var(--matrix-green-color);
 }
 /*
@@ -319,6 +320,10 @@ span.hi-languages::after {
 }
 ::-webkit-scrollbar-thumb:window-inactive {
   background: rgba(0, 255, 0, 0.7);
+}
+
+.project , .content{
+    scrollbar-color: var(--dark-background-color) var(--matrix-green-color);
 }
 
 @media only screen and (max-width: 768px) {
