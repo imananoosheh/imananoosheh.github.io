@@ -128,3 +128,95 @@ In this modified DAG:
 - The `hook_task` still uses the previous Python function to fetch data from GCS and save it locally, while `gcs_to_local_task` uses the `GoogleCloudStorageToLocaFileOperator` to achieve the same.
 
 With this modification, both tasks will run in parallel, with the first task using a Python function with the GCS hook and the second task using the `GoogleCloudStorageToLocaFileOperator` to download and save the GCS file locally. The `>>` notation sets up the dependencies such that the `hook_task` will run before the `gcs_to_local_task`.
+
+---
+
+Sure! Let's add another function that uploads the locally saved data to a GCS bucket using a GCS hook. We'll then create a task that uses the `LocalToGoogleCloudStorageOperator` to upload the locally saved file to the GCS bucket.
+
+```python
+from datetime import datetime, timedelta
+from airflow import DAG
+from airflow.operators.python_operator import PythonOperator
+from airflow.operators.gcs_to_local_operator import GoogleCloudStorageToLocaFileOperator
+from airflow.operators.local_to_gcs_operator import LocalToGoogleCloudStorageOperator
+from airflow.hooks.gcs_hook import GoogleCloudStorageHook
+
+default_args = {
+    'start_date': datetime(2023, 7, 10),
+    'retries': 1,
+    'retry_delay': timedelta(minutes=5)
+}
+
+dag = DAG(
+    'example_dag_gcs_to_local',
+    default_args=default_args,
+    schedule_interval=None
+)
+
+# Using Hook
+def fetch_data_from_gcs_and_save_locally():
+    gcs_hook = GoogleCloudStorageHook(gcp_conn_id='my_gcs_conn')  # 'my_gcs_conn' is the connection ID defined in Airflow
+    source_bucket = 'my-source-bucket'
+    source_object = 'data.csv'
+    destination_path = '/path/to/local/folder/data.csv'
+    
+    content = gcs_hook.download(bucket_name=source_bucket, object_name=source_object)
+    
+    with open(destination_path, 'wb') as f:
+        f.write(content)
+
+def upload_locally_saved_data_to_gcs():
+    gcs_hook = GoogleCloudStorageHook(gcp_conn_id='my_gcs_conn')  # 'my_gcs_conn' is the connection ID defined in Airflow
+    source_path = '/path/to/local/folder/data.csv'
+    destination_bucket = 'my-destination-bucket'
+    destination_object = 'uploaded_data.csv'
+    
+    with open(source_path, 'rb') as f:
+        gcs_hook.upload(bucket_name=destination_bucket, object_name=destination_object, filename=f)
+
+hook_task = PythonOperator(
+    task_id='using_hook_task',
+    python_callable=fetch_data_from_gcs_and_save_locally,
+    dag=dag
+)
+
+upload_to_gcs_task = PythonOperator(
+    task_id='upload_to_gcs_task',
+    python_callable=upload_locally_saved_data_to_gcs,
+    dag=dag
+)
+
+# Using GCS to Local Operator
+gcs_to_local_task = GoogleCloudStorageToLocaFileOperator(
+    task_id='using_gcs_to_local_task',
+    source_bucket='my-source-bucket',
+    source_object='data.csv',
+    destination_path='/path/to/local/folder/data.csv',
+    gcp_conn_id='my_gcs_conn',
+    dag=dag
+)
+
+# Using Local to GCS Operator
+local_to_gcs_task = LocalToGoogleCloudStorageOperator(
+    task_id='using_local_to_gcs_task',
+    src='/path/to/local/folder/data.csv',
+    dst='gs://my-destination-bucket/uploaded_data.csv',
+    gcp_conn_id='my_gcs_conn',
+    dag=dag
+)
+
+hook_task >> gcs_to_local_task
+hook_task >> upload_to_gcs_task
+upload_to_gcs_task >> local_to_gcs_task
+```
+
+
+In this appended code:
+
+- We added a new function `upload_locally_saved_data_to_gcs`, which uses the GCS hook to upload the locally saved data (from the previous task) to the specified GCS bucket and object.
+
+- We created a new task named `upload_to_gcs_task` that executes the `upload_locally_saved_data_to_gcs` function.
+
+- We also added the `LocalToGoogleCloudStorageOperator` named `local_to_gcs_task`, which takes the locally saved file (`/path/to/local/folder/data.csv`) and uploads it to the GCS bucket with the specified destination path (`gs://my-destination-bucket/uploaded_data.csv`).
+
+Now, when you execute the DAG, the data will be fetched from GCS, saved locally, uploaded to a different GCS bucket from the local storage, and finally, the locally saved file will be uploaded to GCS using the operator.
