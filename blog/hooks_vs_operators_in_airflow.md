@@ -137,9 +137,9 @@ Sure! Let's add another function that uploads the locally saved data to a GCS bu
 from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
-from airflow.operators.gcs_to_local_operator import GoogleCloudStorageToLocaFileOperator
-from airflow.operators.local_to_gcs_operator import LocalToGoogleCloudStorageOperator
-from airflow.hooks.gcs_hook import GoogleCloudStorageHook
+from airflow.providers.google.cloud.transfers.gcs_to_local import GCSToLocalFilesystemOperator
+from airflow.providers.google.cloud.transfers.local_to_gcs import LocalFilesystemToGCSOperator
+from airflow.providers.google.cloud.hooks.gcs import GCSHook
 
 default_args = {
     'start_date': datetime(2023, 7, 10),
@@ -147,18 +147,25 @@ default_args = {
     'retry_delay': timedelta(minutes=5)
 }
 
+# static parameters
+SOURCE_BUCKET = 'airflow_trainning_source_bucket'
+DESTINATION_BUCKET = 'airflow_trainning_destination_bucket'
+FILE_A = 'A_organizations-100.csv'
+FILE_B = 'B_organizations-100.csv'
+LOCAL_TEMP_DIR = '/home/johneyaazad/airflow/temp-dir/'
+
 dag = DAG(
     'example_dag_gcs_to_local',
     default_args=default_args,
     schedule_interval=None
 )
 
-# Using Hook
+# Using Hooks to do: gcs_to_local >> local_to_gcs
 def fetch_data_from_gcs_and_save_locally():
-    gcs_hook = GoogleCloudStorageHook(gcp_conn_id='my_gcs_conn')  # 'my_gcs_conn' is the connection ID defined in Airflow
-    source_bucket = 'my-source-bucket'
-    source_object = 'data.csv'
-    destination_path = '/path/to/local/folder/data.csv'
+    gcs_hook = GCSHook(gcp_conn_id='google_cloud_default')  # 'google_cloud_default' is the connection ID defined in Airflow
+    source_bucket = SOURCE_BUCKET
+    source_object = FILE_A
+    destination_path = f'{LOCAL_TEMP_DIR}{FILE_A}'
     
     content = gcs_hook.download(bucket_name=source_bucket, object_name=source_object)
     
@@ -166,48 +173,50 @@ def fetch_data_from_gcs_and_save_locally():
         f.write(content)
 
 def upload_locally_saved_data_to_gcs():
-    gcs_hook = GoogleCloudStorageHook(gcp_conn_id='my_gcs_conn')  # 'my_gcs_conn' is the connection ID defined in Airflow
-    source_path = '/path/to/local/folder/data.csv'
-    destination_bucket = 'my-destination-bucket'
-    destination_object = 'uploaded_data.csv'
+    gcs_hook = GCSHook(gcp_conn_id='google_cloud_default')  # 'google_cloud_default' is the connection ID defined in Airflow
+    source_path = f'{LOCAL_TEMP_DIR}{FILE_A}'
+    destination_bucket = DESTINATION_BUCKET
+    destination_object = f'uploaded_{FILE_A}.csv'
     
     with open(source_path, 'rb') as f:
-        gcs_hook.upload(bucket_name=destination_bucket, object_name=destination_object, filename=f)
+        gcs_hook.upload(bucket_name=destination_bucket, object_name=destination_object, filename=source_path)
 
-hook_task = PythonOperator(
-    task_id='using_hook_task',
+gcs_to_local_hook_task = PythonOperator(
+    task_id='gcs_to_local_using_hook',
     python_callable=fetch_data_from_gcs_and_save_locally,
     dag=dag
 )
 
-upload_to_gcs_task = PythonOperator(
-    task_id='upload_to_gcs_task',
+local_to_gcs_hook_task = PythonOperator(
+    task_id='local_to_gcs_using_hook',
     python_callable=upload_locally_saved_data_to_gcs,
     dag=dag
 )
 
+# Using Operator to do: gcs_to_local >> local_to_gcs
 # Using GCS to Local Operator
-gcs_to_local_task = GoogleCloudStorageToLocaFileOperator(
-    task_id='using_gcs_to_local_task',
-    source_bucket='my-source-bucket',
-    source_object='data.csv',
-    destination_path='/path/to/local/folder/data.csv',
-    gcp_conn_id='my_gcs_conn',
+gcs_to_local_op_task = GCSToLocalFilesystemOperator(
+    task_id='gcs_to_local_using_operator',
+    bucket=SOURCE_BUCKET,
+    object_name=FILE_B,
+    filename=f'{LOCAL_TEMP_DIR}{FILE_B}',
+    gcp_conn_id='google_cloud_default',
     dag=dag
 )
 
 # Using Local to GCS Operator
-local_to_gcs_task = LocalToGoogleCloudStorageOperator(
-    task_id='using_local_to_gcs_task',
-    src='/path/to/local/folder/data.csv',
-    dst='gs://my-destination-bucket/uploaded_data.csv',
-    gcp_conn_id='my_gcs_conn',
+local_to_gcs_op_task = LocalFilesystemToGCSOperator(
+    task_id='local_to_gcs_using_operator',
+    src=f'{LOCAL_TEMP_DIR}{FILE_B}',
+    dst=f'uploaded_{FILE_B}.csv',
+    bucket=DESTINATION_BUCKET,
+    gcp_conn_id='google_cloud_default',
     dag=dag
 )
 
-hook_task >> gcs_to_local_task
-hook_task >> upload_to_gcs_task
-upload_to_gcs_task >> local_to_gcs_task
+gcs_to_local_hook_task >> local_to_gcs_hook_task
+gcs_to_local_op_task >> local_to_gcs_op_task
+
 ```
 
 
