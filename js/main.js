@@ -170,20 +170,20 @@ function loadHome(siteContent) {
     }
   }
 
-  /*  GitHub Calendar
-   *   Forked from: https://github.com/Bloggify/github-calendar
-   *   CSS is modified in main.css:270
-   */
-  const githubCalendarContainer = document.createElement("div");
-  githubCalendarContainer.className = "calendar-container";
-  const githubCalendar = document.createElement("div");
-  githubCalendar.className = "calendar";
-  const githubCalendarHeader = document.createElement("h2");
-  githubCalendarHeader.textContent = "GitHub Contributions";
-  githubCalendarContainer.appendChild(githubCalendarHeader);
-  githubCalendarContainer.appendChild(githubCalendar);
-  contentSection.appendChild(githubCalendarContainer);
-  GitHubCalendar(".calendar", "imananoosheh", { responsive: true });
+  // /*  GitHub Calendar
+  //  *   Forked from: https://github.com/Bloggify/github-calendar
+  //  *   CSS is modified in main.css:270
+  //  */
+  // const githubCalendarContainer = document.createElement("div");
+  // githubCalendarContainer.className = "calendar-container";
+  // const githubCalendar = document.createElement("div");
+  // githubCalendar.className = "calendar";
+  // const githubCalendarHeader = document.createElement("h2");
+  // githubCalendarHeader.textContent = "GitHub Contributions";
+  // githubCalendarContainer.appendChild(githubCalendarHeader);
+  // githubCalendarContainer.appendChild(githubCalendar);
+  // contentSection.appendChild(githubCalendarContainer);
+  // GitHubCalendar(".calendar", "imananoosheh", { responsive: true });
 }
 function load404() {
   contentSection.innerHTML = null;
