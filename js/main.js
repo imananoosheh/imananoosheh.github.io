@@ -169,6 +169,9 @@ function loadHome(siteContent) {
       contentSection.appendChild(contentContainer);
     }
   }
+  const githubCalendar = document.createElement('div')
+  githubCalendar.id = "calendar-component"
+  contentSection.append(githubCalendar)
 
   // /*  GitHub Calendar
   //  *   Forked from: https://github.com/Bloggify/github-calendar
