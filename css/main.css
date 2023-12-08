@@ -359,11 +359,18 @@ span.hi-languages::after {
 .months {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  margin-left: 3rem;
+  justify-content: left;
+  margin-left: 2rem;
 }
 .month {
   width: 76px;
+}
+#calendar-component{
+  margin: 3rem 0;
+  font-size: 14px;
+}
+#calendar-component > h1{
+  margin-bottom: 0.5rem;
 }
 
 @media only screen and (max-width: 768px) {
