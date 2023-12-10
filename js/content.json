@@ -32,6 +32,13 @@
             "media-type": "img"
         },
         {
+            "address": "https://anoosheh.info/github-contributions-fetch/",
+            "gh-repo-address": "https://github.com/imananoosheh/github-contributions-fetch/",
+            "media-source": "proj/github-calendar-demo-screenshot.png",
+            "description": "Automated GitHub contribution fetching and archiving. Generating Github Calendar based on the most recent data fetched.",
+            "media-type": "img"
+        },
+        {
             "address": "proj/wordle-replica-project/index.html",
             "gh-repo-address": "https://github.com/imananoosheh/wordle-replica-project",
             "media-source": "proj/wordle-replica-project/demo-screenrecord.gif",
