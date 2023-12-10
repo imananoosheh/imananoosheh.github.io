@@ -165,7 +165,7 @@ a {
   border: none;
   height: 100%;
 }
-.nav-logo > img, .nav-logo > a {
+.nav-logo > a > img {
   max-width: 100%;
   height: 100%;
 }
