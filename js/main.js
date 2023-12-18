@@ -213,6 +213,11 @@ async function setup() {
 	// console.log(projectsPageButton,siteContent)
 	homePageButton.addEventListener("click", () => {
 		loadHome(siteContent);
+		try {
+			fetchData();
+		} catch (error) {
+			console.log(error)
+		}
 	});
 
 	console.log(`%c${consoleWatermark}`, "color:#0f0");
