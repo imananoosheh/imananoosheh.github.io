@@ -121,25 +121,29 @@ function createBanner() {
 	hiContainerSpan.className = "hi-languages";
 	animatedBanner.appendChild(hiContainerSpan);
 	contentSection.appendChild(animatedBanner);
-	let nthHi = 0;
-	let currentHi = hiInElevenLanguages[nthHi].toLocaleUpperCase();
 
-	function appendChar(index) {
-		if (index < currentHi.length) {
-			hiContainerSpan.textContent += currentHi[index];
-			setTimeout(() => appendChar(index + 1), 350);
-		} else {
-			if (nthHi === hiInElevenLanguages.length) nthHi = 0;
-			nthHi++;
-			currentHi = hiInElevenLanguages[nthHi]?.toLocaleUpperCase();
-			index = 0;
+	function appendNthCharOfMthHi(charIdx = 0, hiIdx = 0) {
+		const hiPoolLength = hiInElevenLanguages.length;
+		if (hiIdx >= hiPoolLength) {
+			hiIdx = 0;
+		}
+		const currentHi = hiInElevenLanguages[hiIdx].toLocaleUpperCase();
+		const currentHiLength = currentHi.length;
+		// checks if a hi-word is finished printing
+		if (charIdx < currentHiLength) {
+			hiContainerSpan.textContent += currentHi[charIdx];
 			setTimeout(() => {
-				hiContainerSpan.textContent = "";
-				appendChar(index);
-			}, 1500);
+				appendNthCharOfMthHi(charIdx+1, hiIdx)
+			}, 350);
+		} else {
+			//current hi-word is finished; calling next hi-word
+			setTimeout(() => {
+				hiContainerSpan.textContent = ''
+				appendNthCharOfMthHi(0, hiIdx + 1);
+			}, 400);
 		}
 	}
-	setTimeout(() => appendChar(0), 100);
+	appendNthCharOfMthHi()
 }
 
 function loadHome(siteContent) {
