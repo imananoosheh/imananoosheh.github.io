@@ -176,6 +176,11 @@ function loadHome(siteContent) {
 	const githubCalendar = document.createElement("div");
 	githubCalendar.id = "calendar-component";
 	contentSection.append(githubCalendar);
+	try {
+		fetchData();
+	} catch (error) {
+		console.log(error)
+	}
 }
 
 function load404() {
