@@ -147,7 +147,8 @@ function createBanner() {
 }
 
 function loadHome(siteContent) {
-	contentSection.innerHTML = null;
+	contentSection.innerHTML = '';
+	contentSection.textContent = '';
 	contentSection.classList = "item content";
 	createBanner();
 	for (let eachElement of siteContent["home"]) {
@@ -177,6 +178,8 @@ function loadHome(siteContent) {
 	githubCalendar.id = "calendar-component";
 	contentSection.append(githubCalendar);
 	try {
+		// TODO: needs proper import
+		//calling form another imported script : generateCalendarScript.js
 		fetchData();
 	} catch (error) {
 		console.log(error)
@@ -218,11 +221,6 @@ async function setup() {
 	// console.log(projectsPageButton,siteContent)
 	homePageButton.addEventListener("click", () => {
 		loadHome(siteContent);
-		try {
-			fetchData();
-		} catch (error) {
-			console.log(error)
-		}
 	});
 
 	console.log(`%c${consoleWatermark}`, "color:#0f0");
