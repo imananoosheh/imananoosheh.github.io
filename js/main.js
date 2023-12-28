@@ -176,14 +176,8 @@ function loadHome(siteContent) {
 	}
 	const githubCalendar = document.createElement("div");
 	githubCalendar.id = "calendar-component";
+	githubCalendar.setAttribute('username','imananoosheh')
 	contentSection.append(githubCalendar);
-	try {
-		// TODO: needs proper import
-		//calling form another imported script : generateCalendarScript.js
-		fetchData();
-	} catch (error) {
-		console.log(error)
-	}
 }
 
 function load404() {
