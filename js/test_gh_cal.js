@@ -251,6 +251,10 @@ function initGitHubCalendar() {
             }
         } else {
             console.error("Calendar component not found in the DOM.");
+            console.error("Retrying in a second ...");
+            setTimeout(()=>{
+                initGitHubCalendar();
+            }, 1000)
         }
     });
 }
