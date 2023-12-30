@@ -1,5 +1,4 @@
 "use strict";
-import initGitHubCalendar from './test_gh_cal.js'
 //Checking if URL redirected from 404 page
 const url = new URL(window.location.href);
 const params = new URLSearchParams(url.search);
