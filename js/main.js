@@ -1,4 +1,5 @@
 "use strict";
+import initGitHubCalendar from './test_gh_cal.js'
 //Checking if URL redirected from 404 page
 const url = new URL(window.location.href);
 const params = new URLSearchParams(url.search);
@@ -178,6 +179,7 @@ function loadHome(siteContent) {
 	githubCalendar.id = "calendar-component";
 	githubCalendar.setAttribute('username','imananoosheh')
 	contentSection.append(githubCalendar);
+	initGitHubCalendar()
 }
 
 function load404() {

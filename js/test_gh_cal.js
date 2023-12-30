@@ -227,7 +227,7 @@ async function generateCalendar(username, options) {
 	}
 }
 
-function initGitHubCalendar() {
+export default function initGitHubCalendar() {
     document.addEventListener("DOMContentLoaded", function () {
         const calendarComponent = document.getElementById("calendar-component");
 
@@ -251,10 +251,6 @@ function initGitHubCalendar() {
             }
         } else {
             console.error("Calendar component not found in the DOM.");
-            console.error("Retrying in a second ...");
-            setTimeout(()=>{
-                initGitHubCalendar();
-            }, 1000)
         }
     });
 }
