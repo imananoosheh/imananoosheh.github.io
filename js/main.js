@@ -96,6 +96,10 @@ function projectTemplating(
 }
 
 function loadProject(siteContent) {
+	const gitHubCalendar = document.querySelector('#calendar-component')
+	if(gitHubCalendar){
+		gitHubCalendar.style.display = 'none'
+	}
 	contentSection.textContent = "";
 	contentSection.classList = "item projects";
 	const projectsWrapper = document.createElement("div");
@@ -147,6 +151,10 @@ function createBanner() {
 }
 
 function loadHome(siteContent) {
+	const gitHubCalendar = document.querySelector('#calendar-component')
+	if(gitHubCalendar){
+		gitHubCalendar.style.display = 'block'
+	}
 	contentSection.textContent = '';
 	contentSection.classList = "item";
 	createBanner();
