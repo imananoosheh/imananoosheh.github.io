@@ -147,9 +147,8 @@ function createBanner() {
 }
 
 function loadHome(siteContent) {
-	contentSection.innerHTML = '';
 	contentSection.textContent = '';
-	contentSection.classList = "item content";
+	contentSection.classList = "item";
 	createBanner();
 	for (let eachElement of siteContent["home"]) {
 		if (eachElement["type"] === "text") {
@@ -174,11 +173,6 @@ function loadHome(siteContent) {
 			contentSection.appendChild(contentContainer);
 		}
 	}
-	const githubCalendar = document.createElement("div");
-	githubCalendar.id = "calendar-component";
-	githubCalendar.setAttribute('username','imananoosheh')
-	contentSection.append(githubCalendar);
-	initGitHubCalendar()
 }
 
 function load404() {
