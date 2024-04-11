@@ -41,6 +41,11 @@ canvas#matrix {
   align-self: center;
   width: 100%;
 }
+
+#calendar-component{
+  margin: 2rem 0rem;
+}
+
 .header {
   height: 12.5%;
 }
