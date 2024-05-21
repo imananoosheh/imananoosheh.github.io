@@ -44,7 +44,10 @@ canvas#matrix {
 
 #calendar-component{
   margin: 2rem 0rem;
-  background-color: transparent;
+  background-color: transparent !important;
+}
+#calendar-component > h1{
+  text-align: center !important;
 }
 
 .header {
